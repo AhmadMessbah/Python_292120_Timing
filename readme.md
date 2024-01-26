@@ -10,3 +10,7 @@ Python - MySQL - Tkinter
 
     - Leila Zibaei Jannati
 
+doctor --> yasamin
+patient and user --> mahdi
+timing --> fahime
+visit --> leila
