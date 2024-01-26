@@ -1,11 +1,12 @@
-from sqlalchemy import Column, Integer, String,Boolean
+from model.entity.base import Base
+from sqlalchemy import Column, Integer, DateTime, Date
 
-class Timing:
+class Timing(Base):
     __tablename__ = "timing_tbl"
     id = Column(Integer, primary_key=True)
-    timing_date = Column(String(30))
-    start_time = Column(String(30))
-    end_time = Column(String(10))
+    timing_date = Column(Date)
+    start_time = Column(DateTime)
+    end_time = Column(DateTime)
 
 
     def __init__(self, timing_date, start_time, end_time):
