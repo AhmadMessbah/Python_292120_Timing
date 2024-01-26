@@ -12,10 +12,10 @@ class DatabaseManager:
 
     def make_engine(self):
         # mysql+pymysql://user:password@localhost:3306/database_name
-        if not database_exists("mysql+pymysql://root:root123@localhost:3306/mft"):
-            create_database("mysql+pymysql://root:root123@localhost:3306/mft")
+        if not database_exists("mysql+pymysql://root:mft123@localhost:3306/mft"):
+            create_database("mysql+pymysql://root:mft123@localhost:3306/mft")
 
-        self.engine = create_engine("mysql+pymysql://root:root123@localhost:3306/mft", echo=True)
+        self.engine = create_engine("mysql+pymysql://root:mft123@localhost:3306/mft")
 
         Base.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)
