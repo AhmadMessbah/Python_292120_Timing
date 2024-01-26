@@ -1,6 +1,10 @@
-class Visit:
+from model.entity.base import Base
+
+
+class Visit(Base):
+    __tablename__ = "visit_tbl"
+
     def __init__(self, patient, timing, visit_time, duration, payment):
-        self.id = None
         self.patient = patient
         self.timing = timing
         self.visit_time = visit_time
