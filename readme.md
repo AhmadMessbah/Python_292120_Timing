@@ -1,10 +1,12 @@
-Support System (Ticketing)
+Timing System (Ticketing)
 
 Python - MySQL - Tkinter
 
-    - Ali Souri
+    - Amir Mahdi Shojaei
     
-    - Sina Garousi
+    - Fahime Atyabi
 
-    - Ali Farzanian
+    - Yasamin Bagheri
+
+    - Leila Zibaei Jannati
 
