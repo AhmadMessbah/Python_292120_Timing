@@ -5,10 +5,10 @@ class UserDa:
     def disconnect(self):
         pass
 
-    def save(self,user):
+    def save(self, user):
         pass
 
-    def edit(self,user):
+    def edit(self, user):
         pass
 
     def remove(self, id):
