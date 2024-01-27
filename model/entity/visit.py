@@ -7,7 +7,7 @@ class Visit(Base):
     __tablename__ = "visit_tbl"
 
     patient = Column(Integer(30))
-    timing = Column(String(20))
+    timing = Column(String(30))
     visit_time = Column(String(20))
     duration = Column(String(20))
     payment = Column(String(20))
