@@ -1,12 +1,12 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 
-from model.entity.base import Base
+from Python_292120_Timing.model.entity.base import Base
 
 
 class Visit(Base):
     __tablename__ = "visit_tbl"
-
-    patient = Column(Integer(30))
+    id = Column(Integer, primary_key=True)
+    patient = Column(Integer, ForeignKey("patient_tbl.id"))
     timing = Column(String(30))
     visit_time = Column(String(20))
     duration = Column(String(20))
