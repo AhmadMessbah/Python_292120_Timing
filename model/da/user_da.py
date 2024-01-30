@@ -1,27 +1,5 @@
-class UserDa:
-    def connect(self):
-        pass
+from model.da.database_manager import DatabaseManager
 
-    def disconnect(self):
-        pass
 
-    def save(self, user):
-        pass
-
-    def edit(self, user):
-        pass
-
-    def remove(self, id):
-        pass
-
-    def find_all(self):
-        pass
-
-    def find_by_id(self, id):
-        pass
-
-    def find_by_username(self, username):
-        pass
-
-    def find_by_username_and_password(self, username, password):
-        pass
+class UserDa(DatabaseManager):
+    pass
