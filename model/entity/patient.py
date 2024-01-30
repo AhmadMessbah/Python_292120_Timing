@@ -1,14 +1,14 @@
-from sqlalchemy import Column, Integer, String,Boolean
+from sqlalchemy import Column, Integer, String, Boolean
 
 from model.entity.base import Base
 from model.entity.user import User
 
 
-class Patient(User,Base):
+class Patient(User, Base):
     __tablename__ = 'patient_tbl'
     id = Column(Integer, primary_key=True)
-    name=Column(String(30))
-    family=Column(String(30))
+    name = Column(String(30))
+    family = Column(String(30))
     national_id = Column(String(10))
     date_birth = Column(String(30))
     phone_number = Column(String(15))
