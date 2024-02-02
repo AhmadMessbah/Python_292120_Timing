@@ -31,3 +31,8 @@ def date_birth_validator(date, message):
     else:
         raise ValueError(message)
 
+def time_validator(time, message):
+    if isinstance(time, str) and re.match("^([01]\d|2[0-3]):([0-5]\d)$", time):
+        return time
+    else:
+        raise ValueError(message)
