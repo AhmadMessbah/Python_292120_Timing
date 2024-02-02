@@ -35,3 +35,21 @@ class MedicalServiceController:
 
         except Exception as e:
             msg.showerror("err", "error")
+
+
+
+    def edit(self,id,title,description):
+        try:
+            da = MedicalServiceDa()
+            medical = da.find_by_id(MedicalService, id)
+
+            if medical :
+                medical.title = title
+                medical.description = description
+                da.edit(medical)
+
+                msg.showinfo("info", str(medical))
+        except Exception as e:
+            # msg.showerror("err", e)
+            e.with_traceback()
+

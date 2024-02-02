@@ -1,21 +1,28 @@
+from controller.medical_service_controller import MedicalServiceController
+from model.da.database_manager import DatabaseManager
 from model.da.doctor_da import DoctorDa
 from model.da.medical_service_da import MedicalServiceDa
-from model.da.timing_da import TimingDa
 from model.entity.doctor import Doctor
 from model.entity.medical_service import MedicalService
 from model.entity.timing import Timing
 
 
-# med_da = MedicalServiceDa()
-# med_service = MedicalService("jarahi", "sdfsdfsdfds")
-# med_da.save(med_service)
+med_service = MedicalService("jarahi", "sdfsdfsdfds")
+# doctor = Doctor("name", "family", 'national_id', None, "phone_number", "username", "password", "skill", med_service)
+# timing = Timing("2012-5-14", "2012-5-14", "2012-5-14")
+# da = DoctorDa()
+# da.save(doctor)
+# da.save(timing)
+
+
+# med_service = MedicalServiceController()
+# med_service.edit(1, "TTTTTT", "DDDDDD")
 #
-doc_da = DoctorDa()
-# doctor = Doctor("fahime", "family", 'national_id', None, "phone_number", "username", "password", "skill", med_service)
-# med_da.save(doctor)
-
-doctor = doc_da.find_by_id(Doctor, 3)
-
-timing_da =  TimingDa()
-timing = Timing(doctor, "2012-5-14", "08:00", "14:00")
-timing_da.save(timing)
+# da = MedicalServiceDa()
+# m = MedicalService("TTTTTT", "DDDDDD")
+# m.id = 1
+# m = da.find_by_id(MedicalService,1)
+# m.title = "Medical Service"
+# da.edit(m)
+# medical = da.find_by_id(MedicalService, 1)
+# print(m)

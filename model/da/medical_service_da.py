@@ -7,3 +7,4 @@ class MedicalServiceDa(DatabaseManager):
         self.make_engine()
         entity = self.session.query(Patient).filter_by(title=title)
         return entity
+
