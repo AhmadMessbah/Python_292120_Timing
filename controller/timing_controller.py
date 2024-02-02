@@ -9,12 +9,24 @@ class TimingController:
                 timing = Timing(date, start_time,end_time)
                 da = TimingDa()
                 da.save(timing)
-                return " ثبت شد"
+                return " saved"
         except Exception as e:
             msg.showerror("error",f"error : {e}")
 
-    def edit(self, date, start_time, end_time, status):
-        pass
+    def edit(self, date, start_time, end_time, status=True):
+        try:
+            da = TimingDa()
+            timing = da.find_by_id(Timing, id)
+
+            if timing:
+                timing.date = date
+                timing.start_time = start_time
+                timing.end_time = end_time
+                da.edit(timing)
+
+                msg.showinfo("info", str(timing))
+        except Exception as e:
+            msg.showerror("error",f"error : {e}")
 
     def remove(self, id):
         pass
