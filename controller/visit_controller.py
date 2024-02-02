@@ -1,5 +1,5 @@
-from Python_292120_Timing.model.da.visit_da import VisitDa
-from Python_292120_Timing.model.entity.visit import Visit
+from model.da.visit_da import VisitDa
+from model.entity.visit import Visit
 
 
 class VisitController:
