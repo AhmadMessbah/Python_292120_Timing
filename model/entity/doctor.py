@@ -19,6 +19,7 @@ class Doctor(Base):
 
     medical_service = relationship("MedicalService")
 
+
     def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill, medical_service,
                  status=True):
         self.id = None

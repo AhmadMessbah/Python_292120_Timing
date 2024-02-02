@@ -1,14 +1,12 @@
 from model.da.doctor_da import DoctorDa
 from model.entity.doctor import Doctor
-from model.tools.validation import name_validator
+from model.tools.validation import name_validator, national_id_validator
 import tkinter.messagebox as msg
 
 
 def find_by_national_id_controller(national_id):
     try:
-        if name_validator(national_id, "error"):
-            service = national_id(national_id)
-
+        if national_id_validator(national_id, "error"):
         da = DoctorDa()
         da.find_by_national_id(national_id)
         return "فرد پیدا شد"
@@ -21,6 +19,9 @@ class DoctorController:
 
     def save(self,name, family, national_id, date_birth, phone_number, username, password):
         try:
+
+
+
             # validation
             doctor = Doctor(name, family, national_id, date_birth, phone_number, username, password)
             da = DoctorDa()
