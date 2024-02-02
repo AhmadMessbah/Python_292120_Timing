@@ -33,7 +33,7 @@ class DatabaseManager:
         self.make_engine()
         self.session.merge(entity)
         self.session.commit()
-        self.session.refresh(entity)
+        # self.session.refresh(entity)
         self.session.close()
         return entity
 
@@ -64,5 +64,6 @@ class DatabaseManager:
     def find_by_id(self, class_name, id):
         self.make_engine()
         entity = self.session.get(class_name, id)
+        # self.session.refresh(entity)
         self.session.close()
         return entity

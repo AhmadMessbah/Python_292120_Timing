@@ -21,10 +21,10 @@ class PatientController:
         except Exception as e:
             return e
 
-    def find_patient_by_id_controller(self, id):
+    def find_by_id(self, id):
         try:
             da = PatientDa()
-            da.find_by_id(id)
+            da.find_by_id(Patient, id)
             return "فرد پیدا شد"
 
         except Exception as e:
