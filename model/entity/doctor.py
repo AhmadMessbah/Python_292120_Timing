@@ -1,11 +1,9 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
-
 from model.entity.base import Base
-from model.entity.user import User
 
 
-class Doctor(User, Base):
+class Doctor(Base):
     __tablename__ = "doctor_tbl"
     id = Column(Integer, primary_key=True)
     name = Column(String(30))
@@ -23,7 +21,15 @@ class Doctor(User, Base):
 
     def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill, medical_service,
                  status=True):
-        super().__init__(name, family, national_id, date_birth, phone_number, username, password, status)
+        self.id = None
+        self.id = None
+        self.name = name
+        self.family = family
+        self.national_id = national_id
+        self.date_birth = date_birth
+        self.phone_number = phone_number
+        self.username = username
+        self.password = password
+        self.status = status
         self.skill = skill
         self.medical_service = medical_service
-        self.id = None

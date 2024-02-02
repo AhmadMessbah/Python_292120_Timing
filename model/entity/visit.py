@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 
-from Python_292120_Timing.model.entity.base import Base
+from model.entity.base import Base
 
 
 class Visit(Base):

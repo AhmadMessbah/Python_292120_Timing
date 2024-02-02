@@ -1,10 +1,9 @@
 from sqlalchemy import Column, Integer, String, Boolean
 
 from model.entity.base import Base
-from model.entity.user import User
 
 
-class Patient(User, Base):
+class Patient(Base):
     __tablename__ = 'patient_tbl'
     id = Column(Integer, primary_key=True)
     name = Column(String(30))
@@ -16,6 +15,13 @@ class Patient(User, Base):
     password = Column(String(30))
     status = Column(Boolean)
 
-    def __init__(self, name, family, national_id, date_birth, phone_number, username, password, status=True):
-        super().__init__(name, family, national_id, date_birth, phone_number, username, password, status=True)
+    def __init__(self, name, family, national_id, date_birth, phone_number, username, password,status=True):
         self.id = None
+        self.name = name
+        self.family = family
+        self.national_id = national_id
+        self.date_birth = date_birth
+        self.phone_number = phone_number
+        self.username = username
+        self.password = password
+        self.status = status
