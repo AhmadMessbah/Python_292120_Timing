@@ -29,4 +29,3 @@ class MedicalServiceController:
 
         except Exception as e:
             return e
-
