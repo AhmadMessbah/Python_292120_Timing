@@ -2,6 +2,8 @@ from model.da.doctor_da import DoctorDa
 from model.entity.doctor import Doctor
 
 
+
+
 def find_by_national_id_controller(national_id):
     try:
         da = DoctorDa()
