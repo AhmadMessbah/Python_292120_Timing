@@ -6,7 +6,6 @@ class TimingController:
     def edit(self,  id, name, family, username, password, role, status):
         pass
 
-
     def remove(self, id):
         pass
 
@@ -16,12 +15,22 @@ class TimingController:
 
 
     def find_by_id(self, id):
-        pass
+        try:
+            logging.info(f"FIND BY ID {id}")
+            return self.da.find_by_id(id)
+        except Exception as e:
+            return False
 
 
     def find_by_username(self, username):
-        pass
+        try:
+            return self.da.find_by_username(username)
+        except Exception as e:
+            return False
 
 
     def find_by_username_and_password(self, username, password):
-        pass
+        try:
+            return self.da.find_by_username_and_password(username, password)
+        except Exception as e:
+            return False
