@@ -18,6 +18,3 @@ class Visit(Base):
         self.visit_time = visit_time
         self.duration = duration
         self.payment = payment
-
-    def __repr__(self):
-        return str(self.__dict__)
