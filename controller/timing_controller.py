@@ -20,7 +20,3 @@ class TimingController:
 
     def find_by_username(self, username):
         pass
-
-
-    def find_by_username_and_password(self, username, password):
-        pass
