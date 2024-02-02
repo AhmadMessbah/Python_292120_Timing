@@ -1,16 +1,23 @@
 from model.da.doctor_da import DoctorDa
 from model.entity.doctor import Doctor
+from model.tools.validation import name_validator
+import tkinter.messagebox as msg
+
+
+def find_by_national_id_controller(national_id):
+    try:
+        if name_validator(national_id, "error"):
+            service = national_id(national_id)
+
+        da = DoctorDa()
+        da.find_by_national_id(national_id)
+        return "فرد پیدا شد"
+
+    except Exception as e:
+        return e
+
 
 class DoctorController:
-
-    def find_by_national_id_controller(self, national_id):
-        try:
-            da = DoctorDa()
-            da.find_by_national_id(national_id)
-            return "فرد پیدا شد"
-
-        except Exception as e:
-            return e
 
     def save(self,name, family, national_id, date_birth, phone_number, username, password):
         try:
