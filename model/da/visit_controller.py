@@ -35,4 +35,4 @@ class VisitController:
         try:
             return self.da.find_by_id(id)
         except Exception as e:
-            return False
+            return e
