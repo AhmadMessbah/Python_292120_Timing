@@ -15,22 +15,12 @@ class TimingController:
 
 
     def find_by_id(self, id):
-        try:
-            logging.info(f"FIND BY ID {id}")
-            return self.da.find_by_id(id)
-        except Exception as e:
-            return False
+       pass
 
 
     def find_by_username(self, username):
-        try:
-            return self.da.find_by_username(username)
-        except Exception as e:
-            return False
+        pass
 
 
     def find_by_username_and_password(self, username, password):
-        try:
-            return self.da.find_by_username_and_password(username, password)
-        except Exception as e:
-            return False
+        pass
