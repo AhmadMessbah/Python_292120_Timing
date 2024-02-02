@@ -1,16 +1,19 @@
 from model.da.medical_service_da import MedicalServiceDa
 from model.entity.medical_service import MedicalService
+from model.tools.validation import name_validator
+import tkinter.messagebox as msg
 
 
 class MedicalServiceController:
     def save_medical_srvices_controller(self, title, description):
         try:
-            service = MedicalService(title, description)
-            da = MedicalServiceDa()
-            da.save(service)
-            return " ثبت شد"
+            if name_validator(title, "error"):
+                service = MedicalService(title, description)
+                da = MedicalServiceDa()
+                da.save(service)
+                return " ثبت شد"
         except Exception as e:
-            return e
+            msg.showerror("err", "error")
 
     def remove_medical_srvices_by_id_controller(self, id):
         try:
@@ -23,9 +26,12 @@ class MedicalServiceController:
 
     def find_medical_srvices_by_title_controller(self, title):
         try:
-            da = MedicalServiceDa()
-            da.find_by_title(title)
-            return "پیدا شد"
+            if name_validator(title, "error"):
+                da = MedicalServiceDa()
+                result = da.find_by_title(title)
+                msg.showinfo("info", str(result))
+
+                return "پیدا شد"
 
         except Exception as e:
-            return e
+            msg.showerror("err", "error")
