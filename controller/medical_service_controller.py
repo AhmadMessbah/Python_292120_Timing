@@ -50,6 +50,5 @@ class MedicalServiceController:
 
                 msg.showinfo("info", str(medical))
         except Exception as e:
-            # msg.showerror("err", e)
-            e.with_traceback()
+            msg.showerror("err", e)
 
