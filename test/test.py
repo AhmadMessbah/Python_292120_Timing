@@ -27,7 +27,6 @@ med_service.save("امیرمهدی", "fgDDD")
 
 
 
-
 # save_patient
 # patient = PatientController()
 # p1 = patient.save("amir", "shojaeikian", "0025465831", "1382.02.27", "09121234567", "amsh", "12345678")

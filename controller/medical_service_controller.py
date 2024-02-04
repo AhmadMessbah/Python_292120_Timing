@@ -36,7 +36,6 @@ class MedicalServiceController:
         except Exception as e:
             msg.showerror("err", "error")
 
-
     def edit(self,id,title,description):
         try:
             da = MedicalServiceDa()

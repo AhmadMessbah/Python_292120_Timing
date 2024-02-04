@@ -92,3 +92,4 @@ class PatientController:
 
         except Exception as e:
             return e
+
