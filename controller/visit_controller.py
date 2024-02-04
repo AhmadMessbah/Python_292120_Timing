@@ -1,5 +1,5 @@
-from model.da.visit_da import VisitDa
-from model.entity.visit import Visit
+from Python_292120_Timing.model.da.visit_da import VisitDa
+from Python_292120_Timing.model.entity.visit import Visit
 
 
 class VisitController:
@@ -12,8 +12,7 @@ class VisitController:
             self.da.save(visit)
             return True
         except Exception as e:
-            print(e)
-            return False
+            return e
 
     def edit(self, id, patient, visit_time):
         try:
@@ -34,5 +33,11 @@ class VisitController:
     def find_by_id(self, id):
         try:
             return self.da.find_by_id(id)
+        except Exception as e:
+            return e
+
+    def find_by_timing(self, timing):
+        try:
+            return self.da.find_by_timing(timing)
         except Exception as e:
             return e
