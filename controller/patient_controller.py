@@ -74,6 +74,7 @@ class PatientController:
         except Exception as e:
             return e
 
+
     def find_by_username(self, username):
         try:
             da = PatientDa()

@@ -37,7 +37,6 @@ class MedicalServiceController:
             msg.showerror("err", "error")
 
 
-
     def edit(self,id,title,description):
         try:
             da = MedicalServiceDa()
