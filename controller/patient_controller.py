@@ -17,7 +17,7 @@ class PatientController:
             da.save(patient)
             return "فرد ثبت شد"
         except Exception as e:
-            return e
+            print(e)
 
     def remove(self, id):
         try:
@@ -26,7 +26,7 @@ class PatientController:
             return "فرد حذف شد"
 
         except Exception as e:
-            return e
+            print(e)
 
     def edit(self, id, name, family, national_id, date_birth, phone_number, username, password):
 
@@ -46,7 +46,7 @@ class PatientController:
                 return "user edited"
 
         except Exception as e:
-            return e
+            print(e)
 
     def find_by_id(self, id):
         try:
@@ -56,7 +56,7 @@ class PatientController:
             if patient:
                 return f"find user with id {id}"
         except Exception as e:
-            return e
+            print(e)
 
     def find_by_family(self, family):
         try:
@@ -67,7 +67,7 @@ class PatientController:
                 return f"find user by {family}"
 
         except Exception as e:
-            return e
+            print(e)
 
     def find_by_national_id(self, national_id):
         try:
@@ -78,7 +78,7 @@ class PatientController:
                 return "فرد پیدا شد"
 
         except Exception as e:
-            return e
+            print(e)
 
     def find_by_username(self, username):
         try:
@@ -87,7 +87,7 @@ class PatientController:
             return "فرد پیدا شد"
 
         except Exception as e:
-            return e
+            print(e)
 
     def find_by_username_password(self, username, password):
         try:
@@ -96,4 +96,4 @@ class PatientController:
             return "فرد مورد نظر پیدا شد"
 
         except Exception as e:
-            return e
+            print(e)

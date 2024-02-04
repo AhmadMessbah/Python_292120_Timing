@@ -1,19 +1,19 @@
 from model.da.medical_service_da import MedicalServiceDa
 from model.entity.medical_service import MedicalService
 from model.tools.validation import name_validator
+from model.tools.validation import *
 import tkinter.messagebox as msg
 
 
 class MedicalServiceController:
     def save(self, title, description):
         try:
-            service = MedicalService(title, description)
+            service = MedicalService(name_validator(title,"invalid title"), description)
             da = MedicalServiceDa()
             da.save(service)
             return f"medical service save {title}"
         except Exception as e:
-            msg.showerror("err", "error")
-
+            print(e)
     def remove(self, id):
         try:
             da = MedicalServiceDa()
@@ -21,7 +21,7 @@ class MedicalServiceController:
             return f"medical service {id} has been removed"
 
         except Exception as e:
-            return e
+            print(e)
 
     def find_by_title(self, title):
         try:
@@ -33,7 +33,7 @@ class MedicalServiceController:
                 return "پیدا شد"
 
         except Exception as e:
-            msg.showerror("err", "error")
+            print(e)
 
     def edit(self,id,title,description):
         try:
@@ -41,14 +41,12 @@ class MedicalServiceController:
             medical = da.find_by_id(MedicalService, id)
 
             if medical :
-                medical.title = title
+                medical.title = name_validator(title,"invalid title")
                 medical.description = description
                 da.edit(medical)
-
-                msg.showinfo("info", str(medical))
+                return f"medical service {id} edited"
         except Exception as e:
-            # msg.showerror("err", e)
-            e.with_traceback()
+            print(e)
 
     def find_by_id(self, id):
         try:
@@ -58,4 +56,4 @@ class MedicalServiceController:
             if medical:
                 return f"find user with id {id}"
         except Exception as e:
-            return e
+            print(e)

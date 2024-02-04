@@ -9,7 +9,7 @@ from model.entity.timing import Timing
 
 # save_medical
 # med_service = MedicalServiceController()
-# med_service.save("ugd", "fgDDD")
+# med_service.save("erffge", "fgDDerffgeD")
 
 # remove_medical
 # med_service = MedicalServiceController()
@@ -17,13 +17,11 @@ from model.entity.timing import Timing
 
 # find_medical
 # med_service = MedicalServiceController()
-# med_service.find_by_id(4)
+# med_service.find_by_id(9)
 
 # edit_medical
 # med_service = MedicalServiceController()
-# med_service.edit(2,"bihoshi","srytrtsh")
-
-
+# med_service.edit(9,"bihoshi","srytrtsh")
 
 
 
