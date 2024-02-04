@@ -1,12 +1,18 @@
 from model.da.patient_da import PatientDa
 from model.entity.patient import Patient
-import tkinter.messagebox as msg
-
+from model.tools.validation import *
 
 class PatientController:
     def save(self, name, family, national_id, date_birth, phone_number, username, password):
         try:
-            patient = Patient(name, family, national_id, date_birth, phone_number, username, password)
+            patient = Patient(name_validator(name,"invalid name"),
+                              name_validator(family,"invalid family"),
+                              national_id_validator(national_id,"invalid nationalId"),
+                              date_validator(date_birth,"invalid date_birth"),
+                              phone_number_validator(phone_number,"invalid phone number"),
+                              username_validator(username,"invalid username"),
+                              password_validator(password,"invalid password")
+                              )
             da = PatientDa()
             da.save(patient)
             return "فرد ثبت شد"
@@ -74,7 +80,6 @@ class PatientController:
         except Exception as e:
             return e
 
-
     def find_by_username(self, username):
         try:
             da = PatientDa()
@@ -92,4 +97,3 @@ class PatientController:
 
         except Exception as e:
             return e
-

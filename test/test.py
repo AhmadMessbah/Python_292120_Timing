@@ -8,12 +8,12 @@ from model.entity.medical_service import MedicalService
 from model.entity.timing import Timing
 
 # save_medical
-med_service = MedicalServiceController()
-med_service.save("امیرمهدی", "fgDDD")
+# med_service = MedicalServiceController()
+# med_service.save("ugd", "fgDDD")
 
 # remove_medical
 # med_service = MedicalServiceController()
-# m1 = med_service.remove(6)
+# m1 = med_service.remove(10)
 
 # find_medical
 # med_service = MedicalServiceController()
@@ -29,7 +29,7 @@ med_service.save("امیرمهدی", "fgDDD")
 
 # save_patient
 # patient = PatientController()
-# p1 = patient.save("amir", "shojaeikian", "0025465831", "1382.02.27", "09121234567", "amsh", "12345678")
+# p1 = patient.save("amirjik", "shojaeikiantgui", "0025811111", "1382.02.27", "09121234567", "amsh", "Aa123456$")
 # print(p1)
 
 # remove_patient

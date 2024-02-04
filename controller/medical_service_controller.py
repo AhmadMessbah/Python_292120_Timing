@@ -5,26 +5,25 @@ import tkinter.messagebox as msg
 
 
 class MedicalServiceController:
-    def save_medical_srvices_controller(self, title, description):
+    def save(self, title, description):
         try:
-            if name_validator(title, "error"):
-                service = MedicalService(title, description)
-                da = MedicalServiceDa()
-                da.save(service)
-                return " ثبت شد"
+            service = MedicalService(title, description)
+            da = MedicalServiceDa()
+            da.save(service)
+            return f"medical service save {title}"
         except Exception as e:
             msg.showerror("err", "error")
 
-    def remove_medical_srvices_by_id_controller(self, id):
+    def remove(self, id):
         try:
             da = MedicalServiceDa()
-            da.remove(id)
-            return " حذف شد"
+            da.remove_by_id(MedicalService, id)
+            return f"medical service {id} has been removed"
 
         except Exception as e:
             return e
 
-    def find_medical_srvices_by_title_controller(self, title):
+    def find_by_title(self, title):
         try:
             if name_validator(title, "error"):
                 da = MedicalServiceDa()
@@ -51,3 +50,12 @@ class MedicalServiceController:
             # msg.showerror("err", e)
             e.with_traceback()
 
+    def find_by_id(self, id):
+        try:
+            da = MedicalServiceDa()
+            medical = da.find_by_id(MedicalService, id)
+            print(medical)
+            if medical:
+                return f"find user with id {id}"
+        except Exception as e:
+            return e

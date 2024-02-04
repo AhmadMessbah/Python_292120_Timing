@@ -2,7 +2,7 @@ import re
 
 
 def name_validator(name, message):
-    if isinstance(name, str) and re.match("^[آ-ی\s]{3,30}$", name):
+    if isinstance(name, str) and re.match("^[a-zA-Z\s]{3,30}$", name):
         return name
     else:
         raise ValueError(message)
@@ -29,6 +29,11 @@ def national_id_validator(national_id, message):
     else:
         raise ValueError(message)
 
+def phone_number_validator(phone_number, message):
+    if re.match("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$", phone_number):
+        return phone_number
+    else:
+        raise ValueError(message)
 
 def date_validator(date, message):
     if isinstance(date, str) and re.match("^([1][0-9][0-9][0-9])\.[0-1][0-9]\.(([0-2][0-9])|(30))$", date):
