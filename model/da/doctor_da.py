@@ -7,3 +7,8 @@ class DoctorDa(DatabaseManager):
 
     def find_by_username_password(self, username, password):
         pass
+    def find_by_username(self,username):
+        pass
+
+    def find_by_family(self,family):
+        pass

@@ -1,12 +1,13 @@
 from model.da.database_manager import DatabaseManager
 from model.entity.patient import Patient
 
-
 class PatientDa(DatabaseManager):
 
     def find_by_family(self, family):
         self.make_engine()
-        entity = self.session.query(Patient).filter_by(family=family)
+        entity = self.session.query().filter_by(Patient.family == family)
+        # self.session.refresh(entity)
+        self.session.close()
         return entity
 
     def find_by_national_id(self, national_id):

@@ -8,12 +8,13 @@ import tkinter.messagebox as msg
 class MedicalServiceController:
     def save(self, title, description):
         try:
-            service = MedicalService(name_validator(title,"invalid title"), description)
+            service = MedicalService(name_validator(title, "invalid title"), description)
             da = MedicalServiceDa()
             da.save(service)
             return f"medical service save {title}"
         except Exception as e:
             print(e)
+
     def remove(self, id):
         try:
             da = MedicalServiceDa()
@@ -25,23 +26,21 @@ class MedicalServiceController:
 
     def find_by_title(self, title):
         try:
-            if name_validator(title, "error"):
+            if name_validator(title, "invalid title"):
                 da = MedicalServiceDa()
                 result = da.find_by_title(title)
-                msg.showinfo("info", str(result))
-
-                return "پیدا شد"
-
+                if result:
+                    return f"medical service {title} found"
         except Exception as e:
             print(e)
 
-    def edit(self,id,title,description):
+    def edit(self, id, title, description):
         try:
             da = MedicalServiceDa()
             medical = da.find_by_id(MedicalService, id)
 
-            if medical :
-                medical.title = name_validator(title,"invalid title")
+            if medical:
+                medical.title = name_validator(title, "invalid title")
                 medical.description = description
                 da.edit(medical)
                 return f"medical service {id} edited"

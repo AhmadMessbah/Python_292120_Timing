@@ -52,3 +52,7 @@ from model.entity.timing import Timing
 # print(p1)
 
 
+da = D
+
+
+
