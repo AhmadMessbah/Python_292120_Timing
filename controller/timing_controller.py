@@ -5,8 +5,10 @@ import tkinter.messagebox as msg
 class TimingController:
     def save(self, date, start_time, end_time, status=True):
         try:
-            if date_validator(date, "error") and time_validator(start_time, "error") and time_validator(end_time, "error"):
-                timing = Timing(date, start_time,end_time)
+            if (date_validator(date, "error")
+                    and time_validator(start_time, "error")
+                    and time_validator(end_time, "error")):
+                timing = Timing(date, start_time, end_time)
                 da = TimingDa()
                 da.save(timing)
                 return " saved"
