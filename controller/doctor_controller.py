@@ -1,15 +1,15 @@
 from model.da.doctor_da import DoctorDa
 from model.entity.doctor import Doctor
-from model.tools.validation import name_validator, national_id_validator
+from model.tools.validation import *
 
 
 class DoctorController:
 
-    def save(self, name, family, national_id, date_birth, phone_number, username, password):
+    def save(self, name, family, national_id, date_birth, phone_number, username, password,skil,medical_service):
         try:
 
             # validation
-            doctor = Doctor(name, family, national_id, date_birth, phone_number, username, password)
+            doctor = Doctor(name, family, national_id, date_birth, phone_number, username, password,skil,medical_service)
             da = DoctorDa()
             result = da.save(doctor)
             if result :
