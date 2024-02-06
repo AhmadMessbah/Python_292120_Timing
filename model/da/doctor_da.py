@@ -1,4 +1,4 @@
-from database_manager import DatabaseManager
+from model.da.database_manager import DatabaseManager
 
 
 class DoctorDa(DatabaseManager):
