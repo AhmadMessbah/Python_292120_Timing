@@ -16,18 +16,18 @@ class PatientController:
                               )
             da = PatientDa()
             da.save(patient)
-            return "فرد ثبت شد"
+            return f"{name}{family} save successfully"
         except Exception as e:
-            print(e)
+            return e
 
     def remove(self, id):
         try:
             da = PatientDa()
             da.remove_by_id(Patient, id)
-            return "فرد حذف شد"
+            return f"{id} deleted successfully"
 
         except Exception as e:
-            print(e)
+            return e
 
     def edit(self, id, name, family, national_id, date_birth, phone_number, username, password):
 
@@ -44,10 +44,10 @@ class PatientController:
                 patient.username = username_validator(username, "invalid username")
                 patient.password = password_validator(password, "invalid password")
                 da.edit(patient)
-                return "user edited"
+                return f"{patient.name} {patient.family} edit successful"
 
         except Exception as e:
-            print(e)
+            return e
 
     def find_by_id(self, id):
         try:
@@ -57,7 +57,7 @@ class PatientController:
             if patient:
                 return f"find user with id {id}"
         except Exception as e:
-            print(e)
+            return e
 
     def find_by_family(self, family):
         try:
@@ -69,7 +69,7 @@ class PatientController:
                 return f"find user by {family}"
 
         except Exception as e:
-            print(e)
+            return e
 
     def find_by_national_id(self, national_id):
         try:
@@ -77,25 +77,24 @@ class PatientController:
             patient = da.find_by_national_id(national_id)
             print(patient)
             if patient:
-                return "فرد پیدا شد"
+                return f"find user by national_id {national_id}"
 
         except Exception as e:
-            print(e)
+            return e
 
     def find_by_username(self, username):
         try:
             da = PatientDa()
             da.find_by_username(username)
-            return "فرد پیدا شد"
-
+            return f"find user with username {username}"
         except Exception as e:
-            print(e)
+            return e
 
     def find_by_username_password(self, username, password):
         try:
             da = PatientDa()
             da.find_by_username_password(username, password)
-            return "فرد مورد نظر پیدا شد"
+            return f"find user successfully"
 
         except Exception as e:
-            print(e)
+            return e
