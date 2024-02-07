@@ -23,6 +23,11 @@ from model.entity.timing import Timing
 # med_service = MedicalServiceController()
 # med_service.edit(9,"bihoshi","srytrtsh")
 
+# find_medical_by_title
+# todo:Why result has no output
+# med_service = MedicalServiceController()
+# result = med_service.find_by_title("bihoshi")
+# print(result)
 
 
 # save_patient
@@ -50,9 +55,3 @@ from model.entity.timing import Timing
 # patient = PatientController()
 # p1 = patient.find_by_family("shojaeikian")
 # print(p1)
-
-
-da = D
-
-
-

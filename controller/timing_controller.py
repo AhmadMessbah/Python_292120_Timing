@@ -3,12 +3,12 @@ from model.entity.timing import Timing
 from model.tools.validation import *
 import tkinter.messagebox as msg
 class TimingController:
-    def save(self, date, start_time, end_time, status=True):
+    def save(self,doctor, date, start_time, end_time, status=True):
         try:
             if (date_validator(date, "error")
                     and time_validator(start_time, "error")
                     and time_validator(end_time, "error")):
-                timing = Timing(date, start_time, end_time)
+                timing = Timing(doctor,date, start_time, end_time)
                 da = TimingDa()
                 da.save(timing)
                 return " saved"

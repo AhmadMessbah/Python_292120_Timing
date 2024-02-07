@@ -1,13 +1,16 @@
+from controller.doctor_controller import DoctorController
 from controller.timing_controller import TimingController
 from model.da.database_manager import DatabaseManager
 from model.da.doctor_da import DoctorDa
 from model.da.timing_da import TimingDa
 from model.entity.doctor import Doctor
 from model.entity.timing import Timing
-
 # save_timing
 # timing = TimingController()
-# t1 = timing.save("1402.12.3", "8:30", "10:30", "")
+# da= DoctorController()
+# doctor = da.save("aaa","bbb","0123456789","1400.10.10","09123339666","doc","Aa123456$","jarahi","motekhases")
+# print(doctor)
+# t1 = timing.save(doctor,"1402.12.3", "8:30", "10:30",)
 # print(t1)
 
 # remove_timing

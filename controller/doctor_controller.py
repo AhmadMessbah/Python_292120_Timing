@@ -5,44 +5,52 @@ from model.tools.validation import *
 
 class DoctorController:
 
-    def save(self, name, family, national_id, date_birth, phone_number, username, password,skil,medical_service):
+    def save(self, name, family, national_id, date_birth, phone_number, username, password, skil, medical_service):
         try:
 
-            # validation
-            doctor = Doctor(name, family, national_id, date_birth, phone_number, username, password,skil,medical_service)
+            doctor = Doctor(name_validator(name, "invalid name"),
+                            name_validator(family, "invalid family"),
+                            national_id_validator(national_id, "invalid national id"),
+                            date_validator(date_birth, "invalid date"),
+                            phone_number_validator(phone_number, "invalid phone number"),
+                            username_validator(username, "invalid username"),
+                            password_validator(password, "invalid password"),
+                            name_validator(skil, "invalid skil"),
+                            medical_service
+                            )
             da = DoctorDa()
             result = da.save(doctor)
-            if result :
-                return f"Doctor saved successfully"
+            if result:
+                return f"{doctor} saved successfully"
 
         except Exception as e:
             return e
 
-    def remove_doctor_by_id_controller(id):
+    def remove_doctor_by_id(id):
         try:
             da = DoctorDa()
             result = da.remove(id)
-            if result :
+            if result:
                 return f"remove doctor by id {id}"
 
         except Exception as e:
             return e
 
-    def find_doctor_by_id_controller(id):
+    def find_doctor_by_id(id):
         try:
             da = DoctorDa()
-            result = da.find_by_id(Doctor,id)
+            result = da.find_by_id(Doctor, id)
             if result:
                 return f"find doctor by id: {id}"
 
         except Exception as e:
             return e
 
-    def find_by_family_controller(family):
+    def find_by_family(family):
         try:
             da = DoctorDa()
             result = da.find_by_family(family)
-            if result :
+            if result:
                 return f"find doctor by family{family}"
 
         except Exception as e:
@@ -52,7 +60,7 @@ class DoctorController:
         try:
             da = DoctorDa()
             result = da.find_by_username(username)
-            if result :
+            if result:
                 return f"find doctor by username {username}"
 
         except Exception as e:
