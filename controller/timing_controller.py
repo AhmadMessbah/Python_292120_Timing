@@ -15,6 +15,7 @@ class TimingController:
         except Exception as e:
             msg.showerror("error",f"error : {e}")
 
+
     def edit(self, date, start_time, end_time, status=True):
         try:
             da = TimingDa()
