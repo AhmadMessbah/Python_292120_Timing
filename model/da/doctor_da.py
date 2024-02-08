@@ -1,4 +1,5 @@
 from model.da.database_manager import DatabaseManager
+from model.entity.doctor import Doctor
 
 
 class DoctorDa(DatabaseManager):

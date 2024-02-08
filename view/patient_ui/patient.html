@@ -10,7 +10,7 @@
 </head>
 <body>
  <div class="container">
-    <form>
+    <form id="dataForm">
       <label for="name">نام:</label>
       <input type="text" id="name" name="name">
 
@@ -33,12 +33,13 @@
       <input type="password" id="password" name="password">
 
 
-      <input type="submit" value="ارسال">
+      <button type="button" onclick="addRow()">ارسال</button>
     </form>
 
-    <table>
+    <table id="dataTable">
       <thead>
         <tr>
+           <th>شماره</th>
           <th>نام</th>
           <th>نام خانوادگی</th>
           <th>کد ملی</th>
@@ -50,16 +51,11 @@
       </thead>
       <tbody>
 
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
 
       </tbody>
     </table>
   </div>
+<script src="../doctor_ui/save_button.js"></script>
+
 </body>
 </html>

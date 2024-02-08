@@ -10,7 +10,7 @@
 </head>
 <body>
  <div class="container">
-    <form>
+    <form id="dataForm">
 
       <label for="visit_time">وقت ویزیت:</label>
       <input type="text" id="visit_time" name="visit_time">
@@ -21,7 +21,7 @@
 
 
       <label for="payment">مبلغ ویزیت:</label>
-      <input type="text" id="payment" name="payment">
+      <input type="number" id="payment" name="payment">
 
 
       <label for="patient_id">شناسه بیمار:</label>
@@ -31,12 +31,13 @@
       <label for="patient_id">شناسه دکتر:</label>
       <input type="number" id="doctor_id" name="patient_id" min="1" step="1" inputmode="numeric">
 
-      <input type="submit" value="ارسال">
+      <button type="button" onclick="addRow()">ارسال</button>
     </form>
 
-    <table>
+    <table id="dataTable">
       <thead>
         <tr>
+           <th>شماره</th>
           <th>وقت ویزیت</th>
           <th>مدت زمان</th>
           <th>مبلغ ویزیت</th>
@@ -45,14 +46,11 @@
         </tr>
       </thead>
       <tbody>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
 
       </tbody>
     </table>
   </div>
+<script src="../doctor_ui/save_button.js"></script>
+
 </body>
 </html>

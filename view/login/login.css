@@ -9,19 +9,17 @@ body {
   height: 100vh;
 }
 
-.container {
+.login-container {
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: -120px;
 }
 
-form {
+.login-form {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 20px;
   direction: rtl;
-
 }
 
 label {
@@ -30,40 +28,19 @@ label {
 
 input {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
-  direction: rtl;
-
+  direction: ltr;
 }
 
-input[type="submit"],
 button {
   background-color: #6297cb;
   color: #fff;
   cursor: pointer;
-  padding: 10px;
+  padding: 14px;
   border: none;
   border-radius: 4px;
-}
-
-table {
-  margin-top: 20px;
   width: 100%;
-  border-collapse: collapse;
-  direction: rtl;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-  width: 150px;
-  height: 90px;
-}
-
-th {
-  background-color: #6297cb;
-  color: #fff;
 }
