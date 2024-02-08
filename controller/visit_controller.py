@@ -36,8 +36,21 @@ class VisitController:
         except Exception as e:
             return e
 
-    def find_by_timing(self, timing):
+    def find_by_timing_id(self, timing_id):
         try:
-            return self.da.find_by_timing(timing)
+            return self.da.find_by_timing_id(timing_id)
         except Exception as e:
             return e
+
+    def find_by_visit_time(self, visit_time):
+        try:
+            return self.da.find_by_visit_time(visit_time)
+        except Exception as e:
+            return e
+
+    def find_by_patient_id(self, patient_id):
+        try:
+            return self.da.find_by_patient_id(patient_id)
+        except Exception as e:
+            return e
+
