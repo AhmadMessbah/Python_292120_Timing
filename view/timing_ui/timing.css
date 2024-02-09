@@ -38,7 +38,8 @@ input {
 
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
   background-color: #6297cb;
   color: #fff;
   cursor: pointer;
@@ -46,7 +47,6 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
 }
-
 table {
   margin-top: 20px;
   width: 100%;

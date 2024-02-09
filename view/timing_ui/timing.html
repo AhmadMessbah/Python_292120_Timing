@@ -10,7 +10,7 @@
 </head>
 <body>
  <div class="container">
-    <form>
+    <form id="dataForm">
       <label for="date">تاریخ :</label>
       <input type="date" id="date" name="date">
 
@@ -24,12 +24,13 @@
       <label for="doctor_id">شناسه دکتر:</label>
       <input type="number" id="doctor_id" name="med_service_id" min="1" step="1" inputmode="numeric">
 
-      <input type="submit" value="ارسال">
+      <button type="button" onclick="addRow()">ارسال</button>
     </form>
 
-    <table>
+    <table id="dataTable">
       <thead>
         <tr>
+          <th>شماره</th>
           <th>تاریخ</th>
           <th>ساعت شروع</th>
           <th>ساعت پایان</th>
@@ -38,13 +39,10 @@
       </thead>
       <tbody>
 
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
       </tbody>
     </table>
   </div>
+<script src="../doctor_ui/save_button.js"></script>
+
 </body>
 </html>

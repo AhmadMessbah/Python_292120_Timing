@@ -10,7 +10,7 @@
 </head>
 <body>
  <div class="container">
-    <form>
+    <form id="dataForm">
       <label for="title">عنوان:</label>
       <input type="text" id="title" name="title">
 
@@ -18,24 +18,25 @@
       <input type="text" id="description" name="description">
 
 
-      <input type="submit" value="ارسال">
+      <button type="button" onclick="addRow()">ارسال</button>
     </form>
 
-    <table>
+    <table id="dataTable">
       <thead>
         <tr>
+             <th>شماره</th>
           <th>عنوان</th>
           <th>توضیحات</th>
         </tr>
       </thead>
       <tbody>
 
-      <td></td>
-      <td></td>
 
 
       </tbody>
     </table>
   </div>
+<script src="../doctor_ui/save_button.js"></script>
+
 </body>
 </html>
