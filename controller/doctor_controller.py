@@ -18,12 +18,14 @@ class DoctorController:
                             name_validator(skil, "invalid skil"),
                             medical_service
                             )
+            print(doctor)
             da = DoctorDa()
             result = da.save(doctor)
-            if result:
-                return f"{doctor} saved successfully"
+            # if result:
+            #     return f"{doctor} saved successfully"
 
         except Exception as e:
+            e.with_traceback()
             return e
 
     def remove_doctor_by_id(id):

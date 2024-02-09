@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5e599ca-7670-42db-9723-ff1683e71cb8" name="Changes" comment="app , home- shojaeikian">
+    <list default="true" id="f5e599ca-7670-42db-9723-ff1683e71cb8" name="Changes" comment="update- shojaeikian">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.js.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/visit_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/visit_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/da/visit_da.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/da/visit_da.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/entity/timing.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/timing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/doctor_ui/doctor.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/assets/css/doctor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/doctor_ui/doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/doctor_ui/save_button.js" beforeDir="false" afterPath="$PROJECT_DIR$/view/assets/js/save_button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/med_service_ui/med_service.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/assets/css/med_service.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/med_service_ui/med_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/med_service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/patient_ui/patient.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/assets/css/patient.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/patient_ui/patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/timing_ui/timing.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/assets/css/timing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/timing_ui/timing.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/timing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/visit_ui/visit.css" beforeDir="false" afterPath="$PROJECT_DIR$/view/assets/css/visit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/visit_ui/visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/visit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +246,7 @@
       <workItem from="1707136134067" duration="6157000" />
       <workItem from="1707234548576" duration="1895000" />
       <workItem from="1707308420600" duration="3187000" />
-      <workItem from="1707416688277" duration="9641000" />
+      <workItem from="1707416688277" duration="10604000" />
     </task>
     <task id="LOCAL-00001" summary="Patient/Medical Service Updated - Shojaii">
       <option name="closed" value="true" />
@@ -376,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707436536227</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update- shojaeikian">
+      <option name="closed" value="true" />
+      <created>1707437868135</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707437868135</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +398,8 @@
     <MESSAGE value="edit patient_controller&#10;- shojaeikian" />
     <MESSAGE value="app.js- shojaeikian" />
     <MESSAGE value="app , home- shojaeikian" />
-    <option name="LAST_COMMIT_MESSAGE" value="app , home- shojaeikian" />
+    <MESSAGE value="update- shojaeikian" />
+    <option name="LAST_COMMIT_MESSAGE" value="update- shojaeikian" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python_292120_Timing$test_doctor.coverage" NAME="test_doctor Coverage Results" MODIFIED="1707310294918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -414,7 +407,7 @@
     <SUITE FILE_PATH="coverage/Python_292120_Timing$test.coverage" NAME="test Coverage Results" MODIFIED="1707140826089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Python$01.coverage" NAME="01 Coverage Results" MODIFIED="1704808199163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing$visit_test.coverage" NAME="visit_test Coverage Results" MODIFIED="1706888839709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Python_292120_Timing$app_js.coverage" NAME="app.js Coverage Results" MODIFIED="1707437812778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_292120_Timing$app_js.coverage" NAME="app.js Coverage Results" MODIFIED="1707438177953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing$patient_da.coverage" NAME="patient_da Coverage Results" MODIFIED="1707137525352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model/da" />
   </component>
 </project>

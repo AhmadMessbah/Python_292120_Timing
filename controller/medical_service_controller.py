@@ -11,7 +11,7 @@ class MedicalServiceController:
             service = MedicalService(name_validator(title, "invalid title"), description)
             da = MedicalServiceDa()
             da.save(service)
-            return f"medical service save {title}"
+            return service
         except Exception as e:
             print(e)
 

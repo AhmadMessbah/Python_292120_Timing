@@ -9,10 +9,10 @@ from model.entity.timing import Timing
 from controller.doctor_controller import DoctorController
 
 # save_medical
-# medical_service = MedicalServiceController()
-# result = medical_service.save("tazrighatiiyyyyyy", "dhohsldw")
-# print(result)
-# doc = DoctorController()
-# doctor = doc.save("aliiyyyyyyyyyi", "fgDDerffgeD", "0123456789", "1400.12.12", "09123665487", "ammm", "Aa123456$", "jarahi", result)
+medical_service = MedicalServiceController()
+medical = medical_service.save("aaaaaaa", "dhohsldw")
+doc = DoctorController()
+print(doc.save("aaaaaa", "fgDDerffgeD", "0123456789", "1400.12.12", "09123665487", "ammm", "Aa123456$", "jarahi",
+               medical))
 # print(doctor)
 #

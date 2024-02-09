@@ -18,9 +18,8 @@ class Doctor(Base):
     medical = relationship("MedicalService")
     status = Column(Boolean)
 
-    def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill, medical_service,
+    def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill, medical,
                  status=True):
-        self.id = None
         self.name = name
         self.family = family
         self.national_id = national_id
@@ -28,6 +27,6 @@ class Doctor(Base):
         self.phone_number = phone_number
         self.username = username
         self.password = password
-        self.status = status
         self.skill = skill
-        self.medical_service = medical_service
+        self.medical = medical
+        self.status = status
