@@ -1,5 +1,5 @@
-from Python_292120_Timing.model.da.database_manager import DatabaseManager
-from Python_292120_Timing.model.entity.visit import Visit
+from model.da.database_manager import DatabaseManager
+from model.entity.visit import Visit
 
 
 class VisitDa(DatabaseManager):

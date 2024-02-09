@@ -10,7 +10,6 @@ class Timing(Base):
     start_time = Column(Time)
     end_time = Column(Time)
     doctor_id = Column(Integer, ForeignKey("doctor_tbl.id"))
-
     doctor = relationship("Doctor")
 
     def __init__(self, doctor, timing_date, start_time, end_time):
