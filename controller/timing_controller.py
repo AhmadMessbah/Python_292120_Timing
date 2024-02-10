@@ -2,21 +2,21 @@ from model.da.timing_da import TimingDa
 from model.entity.timing import Timing
 from model.tools.validation import *
 import tkinter.messagebox as msg
+
+
 class TimingController:
-    def save(self,doctor, date, start_time, end_time, status=True):
+    def save(self, date, start_time, end_time, doctor):
         try:
-            if (date_validator(date, "error")
-                    and time_validator(start_time, "error")
-                    and time_validator(end_time, "error")):
-                timing = Timing(doctor,date, start_time, end_time)
-                da = TimingDa()
-                da.save(timing)
-                return " saved"
+
+            timing = Timing(date, start_time, end_time, doctor)
+            da = TimingDa()
+            result = da.save(timing)
+            if result:
+                print(result)
         except Exception as e:
-            msg.showerror("error",f"error : {e}")
+            print(e)
 
-
-    def edit(self, date, start_time, end_time, status=True):
+    def edit(self, date, start_time, end_time):
         try:
             da = TimingDa()
             timing = da.find_by_id(Timing, id)
@@ -29,21 +29,19 @@ class TimingController:
 
                 msg.showinfo("info", str(timing))
         except Exception as e:
-            msg.showerror("error",f"error : {e}")
+            msg.showerror("error", f"error : {e}")
 
     def remove(self, id):
         try:
             da = TimingDa()
-            da.remove(id)
-            return "deleted"
+            da.remove_by_id(Timing, id)
+            return f"medical service {id} has been removed"
 
         except Exception as e:
-            msg.showerror("error",f"error : {e}")
-
+            print(e)
 
     def find_all(self):
         pass
-
 
     def find_by_date(self, date):
         try:
@@ -55,8 +53,7 @@ class TimingController:
                 return "found"
 
         except Exception as e:
-            msg.showerror("error",f"error : {e}")
-
+            msg.showerror("error", f"error : {e}")
 
     def find_by_start_time(self, start_time):
         try:

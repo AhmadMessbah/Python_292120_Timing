@@ -18,8 +18,10 @@ class MedicalServiceController:
     def remove(self, id):
         try:
             da = MedicalServiceDa()
-            da.remove_by_id(MedicalService, id)
-            return f"medical service {id} has been removed"
+            result = da.find_by_id(MedicalService, id)
+            if result :
+                 da.remove_by_id(MedicalService, id)
+                 print(result)
 
         except Exception as e:
             print(e)
@@ -37,7 +39,7 @@ class MedicalServiceController:
     def edit(self, id, title, description):
         try:
             da = MedicalServiceDa()
-            medical = da.find_by_id(MedicalService, id)
+            medical = da.find_by_id(MedicalService,id)
 
             if medical:
                 medical.title = name_validator(title, "invalid title")

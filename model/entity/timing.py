@@ -12,12 +12,11 @@ class Timing(Base):
     doctor_id = Column(Integer, ForeignKey("doctor_tbl.id"))
     doctor = relationship("Doctor")
 
-    def __init__(self, doctor, timing_date, start_time, end_time):
-        self.id = None
-        self.doctor = doctor
+    def __init__(self, timing_date, start_time, end_time, doctor):
         self.timing_date = timing_date
         self.start_time = start_time
         self.end_time = end_time
+        self.doctor = doctor
 
     def __repr__(self):
         return str(self.__dict__)
