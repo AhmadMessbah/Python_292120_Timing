@@ -16,17 +16,26 @@ from model.entity.timing import Timing
 # timing = TimingController()
 # t1 = timing.save("1402.12.3", "8:30", "10:30",doctor)
 # print(t1)
-#
+
 
 # remove_timing
-timing = TimingController()
-t1 = timing.remove(2)
-print(t1)
+# timing = TimingController()
+# t1 = timing.remove(2)
+# print(t1)
+
+# find_by_id_time
+# timing = TimingController()
+# t1 = timing.find_by_id(3)
+# print(t1)
 
 # edit_timing
 # timing = TimingController()
-# t1 = timing.edit("1402.12.3","10:20","11:10","")
+# t1 = timing.edit(3,"1402.12.12","12:30","13:00")
 # print(t1)
+
+
+# ///////////////////////////////////////////////////
+
 
 # find_by_doctor_id
 # timing = TimingController()

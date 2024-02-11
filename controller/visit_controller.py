@@ -6,11 +6,12 @@ class VisitController:
     def __init__(self):
         self.da = VisitDa()
 
-    def save(self, patient_id, timing_id, visit_time, duration, payment):
+    def save(self, patient, timing, visit_time, duration, payment):
         try:
-            visit = Visit(patient_id, timing_id, visit_time, duration, payment)
-            self.da.save(visit)
-            return True
+            visit = Visit(patient, timing, visit_time, duration, payment)
+            result = self.da.save(visit)
+            if result :
+                print(result)
         except Exception as e:
             return e
 

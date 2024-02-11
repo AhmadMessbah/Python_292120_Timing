@@ -16,7 +16,7 @@ class TimingController:
         except Exception as e:
             print(e)
 
-    def edit(self, date, start_time, end_time):
+    def edit(self,id, date, start_time, end_time):
         try:
             da = TimingDa()
             timing = da.find_by_id(Timing, id)
@@ -25,11 +25,11 @@ class TimingController:
                 timing.date = date
                 timing.start_time = start_time
                 timing.end_time = end_time
-                da.edit(timing)
+                result = da.edit(timing)
+                print(result)
 
-                msg.showinfo("info", str(timing))
         except Exception as e:
-            msg.showerror("error", f"error : {e}")
+            print(e)
 
     def remove(self, id):
         try:
@@ -37,6 +37,16 @@ class TimingController:
             da.remove_by_id(Timing, id)
             return f"medical service {id} has been removed"
 
+        except Exception as e:
+            print(e)
+
+    def find_by_id(self, id):
+        try:
+            da = TimingDa()
+            time = da.find_by_id(Timing, id)
+            print(time)
+            if time:
+                return f"find time with id : {id}"
         except Exception as e:
             print(e)
 

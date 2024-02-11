@@ -1,9 +1,16 @@
-from controller.patient_controller import PatientController
+from controller.timing_controller import TimingController
 from controller.visit_controller import VisitController
-p_controller = PatientController()
-v_controller = VisitController()
+from controller.patient_controller import PatientController
 
-# patient = p_controller.find_by_id(1)
-patient = p_controller.save_patient_controller("A", "b", "C", None,"A","a","a")
-print(patient)
-# controller.save()
+
+patient = PatientController()
+p1 = patient.find_by_id(3)
+print(p1)
+
+# timing = TimingController()
+# t1 = timing.find_by_id(3)
+# print(t1)
+#
+# da = VisitController()
+# visit = da.save(p1,t1,"12:30","00:30","300000")
+# print(visit)

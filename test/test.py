@@ -45,9 +45,9 @@ from model.entity.timing import Timing
 # print(p1)
 
 # find_by_id
-# patient = PatientController()
-# p1 = patient.find_by_id(2)
-# print(p1)
+patient = PatientController()
+p1 = patient.find_by_id(3)
+print(p1)
 
 
 # find_by_family

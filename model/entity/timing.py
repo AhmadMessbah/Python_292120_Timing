@@ -18,5 +18,3 @@ class Timing(Base):
         self.end_time = end_time
         self.doctor = doctor
 
-    def __repr__(self):
-        return str(self.__dict__)
