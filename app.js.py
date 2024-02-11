@@ -13,7 +13,7 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/medical", methods=['POST',"GET"])
+@app.route("/medical", methods=['POST',"GET","PUT","DELETE"])
 def medical():
     if request.method == "GET":
         return render_template("med_service.html")
@@ -22,6 +22,19 @@ def medical():
         description = request.form['description']
         controller = MedicalServiceController()
         msg = controller.save(title, description)
+        print(msg)
+        return msg
+    elif request.method == "PUT":
+        id = request.form['id']
+        title = request.form['title']
+        description = request.form['description']
+        controller = MedicalServiceController()
+        msg = controller.edit(id, title, description)
+        return msg
+    elif request.method == "DELETE":
+        id = request.form['id']
+        controller = MedicalServiceController()
+        msg = controller.remove(id)
         return msg
 
 
@@ -47,9 +60,21 @@ def doctor():
     elif request.method == "DELETE":
         id = request.form['id']
         controller = DoctorController()
-        msg = controller.remove_doctor_by_id(id)
+        msg = controller.remove(id)
         return msg
-
+    elif request.method == "PUT":
+        id = request.form['id']
+        name = request.form['name']
+        family = request.form['family']
+        national_id = request.form['national_id']
+        date_birth = request.form['date_birth']
+        phone_number = request.form['phone_number']
+        username = request.form['username']
+        password = request.form['password']
+        skil = request.form['skil']
+        controller = DoctorController()
+        msg = controller.edit(id, name, family, national_id, date_birth, phone_number, username, password, skil)
+        return msg
 
 @app.route("/patient", methods=["GET",'POST', 'DELETE', "PUT"])
 def patient():
@@ -90,13 +115,13 @@ def visit():
     if request.method == "GET":
         return render_template("visit.html")
     elif request.method == "POST":
-        patient_id = request.form['patient_id']
-        timing_id = request.form['timing_id']
+        patient = request.form['patient_id']
+        timing = request.form['timing_id']
         visit_time = request.form['visit_time']
         duration = request.form['duration']
         payment = request.form['payment']
         controller = VisitController()
-        msg = controller.save(patient_id, timing_id, visit_time, duration, payment)
+        msg = controller.save(patient, timing, visit_time, duration, payment)
         return msg
     elif request.method == "DELETE":
         id = request.form['id']
@@ -105,17 +130,15 @@ def visit():
         return msg
     elif request.method == "PUT":
         id = request.form['id']
-        patient_id = request.form['patient_id']
-        timing_id = request.form['timing_id']
         visit_time = request.form['visit_time']
         duration = request.form['duration']
         payment = request.form['payment']
         controller = VisitController()
-        msg = controller.edit(id, patient_id, timing_id, visit_time, duration, payment)
+        msg = controller.edit(id, visit_time, duration, payment)
         return msg
 
 
-@app.route("/timing", methods=["GET",'POST'])
+@app.route("/timing", methods=["GET","POST","PUT","DELETE"])
 def timimng():
     if request.method == 'GET':
         return render_template("timing.html")
@@ -126,6 +149,19 @@ def timimng():
         end_time = request.form['end_time']
         controller = TimingController()
         msg = controller.save(doctor, timing_date, start_time, end_time)
+        return msg
+    elif request.method == 'PUT':
+        id = request.form['id']
+        timing_date = request.form['timing_date']
+        start_time = request.form['start_time']
+        end_time = request.form['end_time']
+        controller = TimingController()
+        msg = controller.edit(id, timing_date, start_time, end_time)
+        return msg
+    elif request.method == 'DELETE':
+        id = request.form['id']
+        controller = TimingController()
+        msg = controller.remove(id)
         return msg
 
 
