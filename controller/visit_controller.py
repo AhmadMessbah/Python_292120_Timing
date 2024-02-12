@@ -3,8 +3,7 @@ from model.entity.visit import Visit
 
 
 class VisitController:
-    @classmethod
-    def save(cls, patient, timing, visit_time, duration, payment):
+    def save(self, patient, timing, visit_time, duration, payment):
         try:
             visit = Visit(patient, timing, visit_time, duration, payment)
             da = VisitDa()
@@ -13,8 +12,7 @@ class VisitController:
         except Exception as e:
             return e
 
-    @classmethod
-    def edit(cls, id, visit_time, duration, payment):
+    def edit(self, id, visit_time, duration, payment):
         try:
             da = VisitDa()
             visit = da.find_by_id(Visit, id)
@@ -29,8 +27,7 @@ class VisitController:
         except Exception as e:
             print(e)
 
-    @classmethod
-    def remove(cls, id):
+    def remove(self, id):
         try:
             da = VisitDa()
             da.remove(id)
@@ -38,32 +35,28 @@ class VisitController:
         except Exception as e:
             return e
 
-    @classmethod
-    def find_by_id(cls, id):
+    def find_by_id(self, id):
         try:
             da = VisitDa()
             return da.find_by_id(id)
         except Exception as e:
             return e
 
-    @classmethod
-    def find_by_timing_id(cls, timing_id):
+    def find_by_timing_id(self, timing_id):
         try:
             da = VisitDa()
             return da.find_by_timing_id(timing_id)
         except Exception as e:
             return e
 
-    @classmethod
-    def find_by_visit_time(cls, visit_time):
+    def find_by_visit_time(self, visit_time):
         try:
             da = VisitDa()
             return da.find_by_visit_time(visit_time)
         except Exception as e:
             return e
 
-    @classmethod
-    def find_by_patient_id(cls, patient_id):
+    def find_by_patient_id(self, patient_id):
         try:
             da = VisitDa()
             return da.find_by_patient_id(patient_id)
