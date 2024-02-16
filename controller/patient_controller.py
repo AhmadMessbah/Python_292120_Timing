@@ -9,7 +9,7 @@ class PatientController:
             patient = Patient(name_validator(name, "invalid name"),
                               name_validator(family, "invalid family"),
                               national_id_validator(national_id, "invalid nationalId"),
-                              date_validator(date_birth, "invalid date_birth"),
+                              date_birth,
                               phone_number_validator(phone_number, "invalid phone number"),
                               username_validator(username, "invalid username"),
                               password_validator(password, "invalid password")
@@ -39,7 +39,7 @@ class PatientController:
                 patient.name = name_validator(name, "invalid name")
                 patient.family = name_validator(family, "invalid family")
                 patient.national_id = national_id_validator(national_id, "invalid nationalId")
-                patient.date_birth = date_validator(date_birth, "invalid date_birth")
+                patient.date_birth = date_birth
                 patient.phone_number = phone_number_validator(phone_number, "invalid phone number")
                 patient.username = username_validator(username, "invalid username")
                 patient.password = password_validator(password, "invalid password")

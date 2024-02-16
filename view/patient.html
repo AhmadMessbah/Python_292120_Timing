@@ -9,52 +9,51 @@
     <title>Patient</title>
 </head>
 <body>
- <div class="container">
+<div class="container">
     <form id="dataForm" action="/patient" method="post">
-      <label for="name">نام:</label>
-      <input type="text" id="name" name="name">
+        <label for="name">نام:</label>
+        <input type="text" id="name" name="name">
 
-      <label for="family">نام خانوادگی:</label>
-      <input type="text" id="family" name="family">
+        <label for="family">نام خانوادگی:</label>
+        <input type="text" id="family" name="family">
 
-      <label for="national_id">کد ملی:</label>
-      <input type="text" id="national_id" name="national_id">
+        <label for="national_id">کد ملی:</label>
+        <input type="text" id="national_id" name="national_id">
 
-      <label for="birth_date">تاریخ تولد:</label>
-      <input type="date" id="birth_date" name="birth_date">
+        <label for="birth_date">تاریخ تولد:</label>
+        <input type="date" id="birth_date" name="date_birth">
 
-      <label for="phone_number">شماره تلفن:</label>
-      <input type="tel" id="phone_number" name="phone_number">
+        <label for="phone_number">شماره تلفن:</label>
+        <input type="tel" id="phone_number" name="phone_number">
 
-      <label for="username">نام کاربری:</label>
-      <input type="text" id="username" name="username">
+        <label for="username">نام کاربری:</label>
+        <input type="text" id="username" name="username">
 
-      <label for="password">رمز عبور:</label>
-      <input type="password" id="password" name="password">
+        <label for="password">رمز عبور:</label>
+        <input type="password" id="password" name="password">
 
 
-      <button type="button" onclick="addRow()">ارسال</button>
+        <button type="submit" onclick="addRow()">ارسال</button>
+
     </form>
 
     <table id="dataTable">
-      <thead>
+        <thead>
         <tr>
-           <th>شماره</th>
-          <th>نام</th>
-          <th>نام خانوادگی</th>
-          <th>کد ملی</th>
-          <th>تاریخ تولد</th>
-          <th>شماره تلفن</th>
-          <th>نام کاربری</th>
-          <th>رمز عبور</th>
+            <th>شماره</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>کد ملی</th>
+            <th>تاریخ تولد</th>
+            <th>شماره تلفن</th>
+            <th>نام کاربری</th>
+            <th>رمز عبور</th>
         </tr>
-      </thead>
-      <tbody>
-
-
-      </tbody>
+        </thead>
+        <tbody>
+        </tbody>
     </table>
-  </div>
+</div>
 <script src="assets/js/save_button.js"></script>
 
 </body>

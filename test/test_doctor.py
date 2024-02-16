@@ -13,7 +13,7 @@ from controller.doctor_controller import DoctorController
 # result = medic.save("salam","sioduhfv9ow")
 # print(result)
 # da= DoctorController()
-# doctor = da.save("qwewerert","bbb","0123456789","1400.10.10","09123339666","doc","Aa123456$","jarahi",result)
+# doctor = da.save("amir","bbb","0123456789","1400.10.10","09123339666","doc","Aa123456$","jarahi",result)
 # print(doctor)
 
 
@@ -26,16 +26,16 @@ from controller.doctor_controller import DoctorController
 # print(da.find_doctor_by_id(37))
 
 
-#edit_doctor
+# edit_doctor
 # da= DoctorController()
 # result = da.edit(37,"qwewerert","bbb","0123456789","1400.10.10","09123339666","doc","Aa123456$","jarahi")
 # print(result)
 
 
-
-
-
-
-
-
-
+# medic_id = 1
+# medic = MedicalServiceController()
+# result = medic.find_by_id(medic_id)
+# print(result)
+# da = DoctorController()
+# doctor = da.save("amir", "bbb", "0123456789", "1400.10.10", "09123339666", "doc", "Aa123456$", "jarahi", result)
+# print(doctor)

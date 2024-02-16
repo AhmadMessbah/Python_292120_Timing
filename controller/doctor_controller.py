@@ -89,15 +89,15 @@ class DoctorController:
     def edit(self, id, name, family, national_id, date_birth, phone_number, username, password, skil):
         try:
             da = DoctorDa()
-            doctor = da.find_by_id(Doctor,id)
+            doctor = da.find_by_id(Doctor, id)
             if doctor:
                 doctor.name = name_validator(name, "invalid name")
-                doctor.family = name_validator(family, "invalid family"),
-                doctor.national_id = national_id_validator(national_id, "invalid national id"),
-                doctor.date_birth = date_validator(date_birth, "invalid date"),
-                doctor.phone_number = phone_number_validator(phone_number, "invalid phone number"),
-                doctor.username = username_validator(username, "invalid username"),
-                doctor.password = password_validator(password, "invalid password"),
+                doctor.family = name_validator(family, "invalid family")
+                doctor.national_id = national_id_validator(national_id, "invalid national id")
+                doctor.date_birth = date_birth
+                doctor.phone_number = phone_number_validator(phone_number, "invalid phone number")
+                doctor.username = username_validator(username, "invalid username")
+                doctor.password = password_validator(password, "invalid password")
                 doctor.skill = name_validator(skil, "invalid skil")
                 da.edit(doctor)
                 return f"doctor {id} edited"
