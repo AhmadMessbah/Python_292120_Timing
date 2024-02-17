@@ -50,7 +50,6 @@ class VisitController:
 
     def find_by_visit_time(self, visit_time):
         try:
-
             return self.da.find_by_visit_time(visit_time)
         except Exception as e:
             return e
