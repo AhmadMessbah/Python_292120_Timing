@@ -64,9 +64,9 @@ class PatientController:
             da = PatientDa()
             patient = da.find_by_family(family)
             print(patient)
-            # Patient.family == family
-            if patient:
-                return f"find user by {family}"
+
+            # if patient:
+            #     return f"find user by {family}"
 
         except Exception as e:
             return e
@@ -95,6 +95,15 @@ class PatientController:
             da = PatientDa()
             da.find_by_username_password(username, password)
             return f"find user successfully"
+
+        except Exception as e:
+            return e
+    def find_all(self):
+        try:
+            da = PatientDa()
+            patients = da.find_all(Patient)
+            print(patients)
+            return patients
 
         except Exception as e:
             return e

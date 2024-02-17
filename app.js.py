@@ -173,6 +173,8 @@ def timimng():
         controller = TimingController()
         msg = controller.remove(id)
         return msg
+
+
 # ////////////////
 
 @app.route("/patient/edit", methods=["GET", "POST"])
@@ -209,5 +211,6 @@ def doctor_edit():
         msg = controller.edit(id, name, family, national_id, date_birth, phone_number, username, password, skil)
         print(msg)
         return render_template("doctor_edit.html")
+
 
 app.run(port=80)

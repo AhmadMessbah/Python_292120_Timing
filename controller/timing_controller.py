@@ -16,7 +16,7 @@ class TimingController:
         except Exception as e:
             print(e)
 
-    def edit(self,id, date, start_time, end_time):
+    def edit(self, id, date, start_time, end_time):
         try:
             da = TimingDa()
             timing = da.find_by_id(Timing, id)
@@ -51,7 +51,13 @@ class TimingController:
             print(e)
 
     def find_all(self):
-        pass
+        try:
+            da = TimingDa()
+            timing = da.find_all(Timing)
+            print(timing)
+
+        except Exception as e:
+            return e
 
     def find_by_date(self, date):
         try:

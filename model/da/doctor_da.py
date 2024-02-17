@@ -23,5 +23,8 @@ class DoctorDa(DatabaseManager):
         entity = self.session.query().filter_by(family=family)
         return entity
 
-    def find_all(self, **kwargs):
-        pass
+    def find_by_username_and_password(self, username, password):
+        self.make_engine()
+        entity = self.session.query(Doctor).filter(
+            (Doctor.username == username, Doctor.password == password))
+        return entity

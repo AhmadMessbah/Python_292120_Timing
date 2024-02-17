@@ -23,5 +23,3 @@ class TimingDa(DatabaseManager):
         entity = self.session.query(Timing).filter_by(doctor_id=doctor_id)
         return entity
 
-    def find_all(self):
-        pass

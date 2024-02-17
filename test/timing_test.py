@@ -57,3 +57,7 @@ from model.entity.timing import Timing
 # timing = TimingController()
 # t1 = timing.find_by_end_time(1)
 # print(t1)
+
+#find_all
+da = TimingController()
+da.find_all()

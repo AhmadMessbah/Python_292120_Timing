@@ -103,3 +103,12 @@ class DoctorController:
                 return f"doctor {id} edited"
         except Exception as e:
             print(e)
+
+    def find_all(self):
+        try:
+            da = DoctorDa()
+            doctors = da.find_all(Doctor)
+            print(doctors)
+            return doctors
+        except Exception as e:
+            print(e)

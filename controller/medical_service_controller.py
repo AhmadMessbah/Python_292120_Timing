@@ -19,9 +19,9 @@ class MedicalServiceController:
         try:
             da = MedicalServiceDa()
             result = da.find_by_id(MedicalService, id)
-            if result :
-                 da.remove_by_id(MedicalService, id)
-                 print(result)
+            if result:
+                da.remove_by_id(MedicalService, id)
+                print(result)
 
         except Exception as e:
             print(e)
@@ -30,16 +30,16 @@ class MedicalServiceController:
         try:
             if name_validator(title, "invalid title"):
                 da = MedicalServiceDa()
-                result = da.find_by_title(title)
+                result = da.find_by_title(MedicalService, title)
                 if result:
-                    return f"medical service {title} found"
+                    return result
         except Exception as e:
             print(e)
 
     def edit(self, id, title, description):
         try:
             da = MedicalServiceDa()
-            medical = da.find_by_id(MedicalService,id)
+            medical = da.find_by_id(MedicalService, id)
 
             if medical:
                 medical.title = name_validator(title, "invalid title")
@@ -56,5 +56,15 @@ class MedicalServiceController:
             print(medical)
             if medical:
                 return f"find user with id {id}"
+        except Exception as e:
+            print(e)
+
+    def find_all(self):
+        try:
+            da = MedicalServiceDa()
+            medical = da.find_all(MedicalService)
+            print(medical)
+
+
         except Exception as e:
             print(e)

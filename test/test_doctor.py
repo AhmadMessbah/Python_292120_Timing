@@ -39,3 +39,7 @@ from controller.doctor_controller import DoctorController
 # da = DoctorController()
 # doctor = da.save("amir", "bbb", "0123456789", "1400.10.10", "09123339666", "doc", "Aa123456$", "jarahi", result)
 # print(doctor)
+
+# find_all
+# da = DoctorController()
+# da.find_all()

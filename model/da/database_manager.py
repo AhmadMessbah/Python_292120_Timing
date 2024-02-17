@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy_utils import database_exists, create_database
 
 from model.entity.base import Base
@@ -20,6 +20,15 @@ class DatabaseManager:
         Base.metadata.create_all(self.engine)
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
+    # def make_engine(self):
+    #     if not database_exists("mysql+pymysql://root:root123@localhost:3306/mft"):
+    #         create_database("mysql+pymysql://root:root123@localhost:3306/mft")
+    #     if not self.engine:
+    #         self.engine = create_engine("mysql+pymysql://root:root123@localhost:3306/mft")
+    #         Base.metadata.create_all(self.engine)
+    #         self.session_factory = sessionmaker(bind=self.engine)
+    #     if not self.session:
+    #         self.session = scoped_session(self.session_factory)
 
     def save(self, entity):
         self.make_engine()
@@ -67,3 +76,9 @@ class DatabaseManager:
         # self.session.refresh(entity)
         self.session.close()
         return entity
+
+    def find_by_title(self, class_name, title):
+        self.make_engine()
+        entity = self.session.query(class_name).filter(class_name.title == title)
+        return entity
+

@@ -23,10 +23,14 @@ from model.entity.timing import Timing
 # med_service = MedicalServiceController()
 # med_service.edit(9,"bihoshi","srytrtsh")
 
+# find_all
+# medical_service = MedicalServiceController()
+# print(medical_service.find_all())
+
 # find_medical_by_title
 # todo:Why result has no output
 # med_service = MedicalServiceController()
-# result = med_service.find_by_title("bihoshi")
+# result = med_service.find_by_title("biihoshi")
 # print(result)
 
 
@@ -45,9 +49,9 @@ from model.entity.timing import Timing
 # print(p1)
 
 # find_by_id
-patient = PatientController()
-p1 = patient.find_by_id(3)
-print(p1)
+# patient = PatientController()
+# p1 = patient.find_by_id(3)
+# print(p1)
 
 
 # find_by_family
@@ -55,3 +59,11 @@ print(p1)
 # patient = PatientController()
 # p1 = patient.find_by_family("shojaeikian")
 # print(p1)
+
+#find_all
+# da = PatientController()
+# da.find_all()
+
+
+
+
