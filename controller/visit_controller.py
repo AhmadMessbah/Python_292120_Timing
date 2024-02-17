@@ -9,26 +9,26 @@ class VisitController:
     def save(self, patient, timing, visit_time, duration, payment):
         try:
             visit = Visit(patient, timing, visit_time, duration, payment)
-            result = self.da.save(visit)
-            if result:
-                print(result)
+            self.da.save(visit)
+            return f"{visit} saved"
         except Exception as e:
+            e.with_traceback()
             return e
 
-    def edit(self, id, visit_time,duration,payment):
+    def edit(self, id, visit_time, duration, payment):
         try:
-            da = VisitDa()
-            visit = da.find_by_id(Visit, id)
+            visit = self.da.find_by_id(Visit, id)
 
             if visit:
                 visit.visit_time = visit_time
                 visit.duration = duration
                 visit.payment = payment
-                result = da.edit(visit)
+                result = self.da.edit(visit)
                 print(result)
 
         except Exception as e:
             print(e)
+
     def remove(self, id):
         try:
             self.da.remove(id)
