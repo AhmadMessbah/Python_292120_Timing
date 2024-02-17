@@ -14,8 +14,6 @@ class Doctor(Base):
     username = Column(String(30))
     password = Column(String(30))
     skill = Column(String(50))
-    medical_service_id = Column(Integer, ForeignKey("medical_service_tbl.id"))
-    medical = relationship("MedicalService")
     status = Column(Boolean)
 
     def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill, medical,

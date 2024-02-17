@@ -4,6 +4,7 @@ from controller.medical_service_controller import MedicalServiceController
 from controller.patient_controller import PatientController
 from controller.timing_controller import TimingController
 from controller.visit_controller import VisitController
+from model.entity.patient import Patient
 
 app = Flask(__name__, template_folder="view", static_folder="view/assets")
 
@@ -85,9 +86,7 @@ def doctor():
 
 @app.route("/patient", methods=["GET", 'POST', 'DELETE', "PUT"])
 def patient():
-    if request.method == 'GET':
-        return render_template("patient.html")
-    elif request.method == "POST":
+    if request.method == "POST":
         name = request.form['name']
         family = request.form['family']
         national_id = request.form['national_id']
@@ -98,7 +97,6 @@ def patient():
         controller = PatientController()
         msg = controller.save(name, family, national_id, date_birth, phone_number, username, password)
         print(msg)
-        return render_template("patient.html")
     elif request.method == "PUT":
         id = request.form['id']
         name = request.form['name']
@@ -111,13 +109,14 @@ def patient():
         controller = PatientController()
         msg = controller.edit(id, name, family, national_id, date_birth, phone_number, username, password)
         print(msg)
-        return render_template("patient.html")
     elif request.method == "DELETE":
-        id = request.form['id']
+        id = request.args.get('id')
+        print("DELETE ID : ", id)
         controller = PatientController()
         msg = controller.remove(id)
-        print(msg)
-        return render_template("patient.html")
+
+
+    return render_template("patient.html", patient_list=PatientController.find_all())
 
 
 @app.route("/visit", methods=["GET", 'POST', 'DELETE', "PUT"])

@@ -6,14 +6,22 @@ from model.tools.validation import *
 class PatientController:
     def save(self, name, family, national_id, date_birth, phone_number, username, password):
         try:
-            patient = Patient(name_validator(name, "invalid name"),
-                              name_validator(family, "invalid family"),
-                              national_id_validator(national_id, "invalid nationalId"),
+            # patient = Patient(name_validator(name, "invalid name"),
+            #                   name_validator(family, "invalid family"),
+            #                   national_id_validator(national_id, "invalid nationalId"),
+            #                   date_birth,
+            #                   phone_number_validator(phone_number, "invalid phone number"),
+            #                   username_validator(username, "invalid username"),
+            #                   password_validator(password, "invalid password")
+            #                   )
+            patient = Patient(name,
+                              family,
+                              national_id,
                               date_birth,
-                              phone_number_validator(phone_number, "invalid phone number"),
-                              username_validator(username, "invalid username"),
-                              password_validator(password, "invalid password")
-                              )
+                              phone_number,
+                              username,
+                              password)
+
             da = PatientDa()
             da.save(patient)
             return f"{name}{family} save successfully"
@@ -98,7 +106,9 @@ class PatientController:
 
         except Exception as e:
             return e
-    def find_all(self):
+
+    @classmethod
+    def find_all(cls):
         try:
             da = PatientDa()
             patients = da.find_all(Patient)

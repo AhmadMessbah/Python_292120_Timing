@@ -33,8 +33,7 @@
         <input type="password" id="password" name="password">
 
 
-        <button type="submit" onclick="addRow()">ارسال</button>
-
+        <input type="submit" value="ذخیره">
     </form>
 
     <table id="dataTable">
@@ -47,14 +46,38 @@
             <th>تاریخ تولد</th>
             <th>شماره تلفن</th>
             <th>نام کاربری</th>
-            <th>رمز عبور</th>
+            <th>عملیات</th>
         </tr>
         </thead>
         <tbody>
+        {% for patient in patient_list %}
+        <tr>
+            <td>{{patient.id}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.family}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <button>Edit</button>
+                <button onclick="remove({{patient.id}})">Remove</button>
+            </td>
+        </tr>
+        {% endfor %}
         </tbody>
     </table>
 </div>
-<script src="assets/js/save_button.js"></script>
+<!--<script src="assets/js/save_button.js"></script>-->
+<script>
+    function remove(id) {
+        fetch("/patient?id=" + id, {
+            method: "DELETE"
+        }).then(() => {
+            window.location.replace("/patient");
+        })
 
+    }
+</script>
 </body>
 </html>

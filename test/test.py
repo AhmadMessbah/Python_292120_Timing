@@ -29,9 +29,9 @@ from model.entity.timing import Timing
 
 # find_medical_by_title
 # todo:Why result has no output
-# med_service = MedicalServiceController()
-# result = med_service.find_by_title("biihoshi")
-# print(result)
+med_service = MedicalServiceDa()
+result = med_service.find_by_title_and_description("bihoshi","srytrtsh")
+print(result)
 
 
 # save_patient

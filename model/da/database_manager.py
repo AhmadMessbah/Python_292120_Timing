@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine,and_, or_
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy_utils import database_exists, create_database
 
@@ -79,6 +79,8 @@ class DatabaseManager:
 
     def find_by_title(self, class_name, title):
         self.make_engine()
-        entity = self.session.query(class_name).filter(class_name.title == title)
+        entity = self.session.query(class_name).filter(class_name.title == title).all()
         return entity
+
+
 
