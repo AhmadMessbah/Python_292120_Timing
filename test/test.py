@@ -30,14 +30,14 @@ from model.entity.timing import Timing
 # find_medical_by_title
 # todo:Why result has no output
 med_service = MedicalServiceDa()
-result = med_service.find_by_title_and_description("bihoshi","srytrtsh")
+result = med_service.find_by_title("bihoshi")
 print(result)
 
 
 # save_patient
-# patient = PatientController()
-# p1 = patient.save("amirjik", "shojaeikiantgui", "0025811111", "1382.02.27", "09121234567", "amsh", "Aa123456$")
-# print(p1)
+
+patient.save("amirjik", "shojaeikiantgui", "0025811111", "1382.02.27", "09121234567", "amsh", "Aa123456$")
+print(p1)
 
 # remove_patient
 # patient = PatientController()

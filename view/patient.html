@@ -60,7 +60,7 @@
             <td></td>
             <td></td>
             <td>
-                <button>Edit</button>
+                <button onclick="edit({{patient.id}})">Edit</button>
                 <button onclick="remove({{patient.id}})">Remove</button>
             </td>
         </tr>
@@ -70,6 +70,9 @@
 </div>
 <!--<script src="assets/js/save_button.js"></script>-->
 <script>
+    function edit(id) {
+        window.location.replace("/patient/"+id);
+    }
 
     function remove(id) {
         fetch("/patient?id=" + id, {
@@ -77,7 +80,6 @@
         }).then(() => {
             window.location.replace("/patient");
         })
-
     }
 </script>
 </body>

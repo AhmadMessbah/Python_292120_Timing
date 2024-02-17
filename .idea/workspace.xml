@@ -6,12 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="f5e599ca-7670-42db-9723-ff1683e71cb8" name="Changes" comment="update - shojaeikian">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/patient_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/patient_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/da/database_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/da/database_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/da/doctor_da.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/da/doctor_da.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/da/medical_service_da.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/da/medical_service_da.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/da/patient_da.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/da/patient_da.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/da/timing_da.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/da/timing_da.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/da/user_da.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/da/visit_da.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/da/visit_da.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/patient_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/patient_edit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +63,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.patient_edit.html.executor": "Run",
     "Python.01.executor": "Run",
+    "Python.app (1).executor": "Run",
     "Python.app.js.executor": "Run",
     "Python.patient_da.executor": "Run",
     "Python.test.executor": "Run",
@@ -99,7 +106,30 @@
       <recent name="D:\Python_292120_Timing\view\assets\js" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app.js">
+  <component name="RunManager" selected="Python.app (1)">
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="ENV_FILES" value="" />
@@ -169,29 +199,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test_login.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="timing_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python" />
       <option name="ENV_FILES" value="" />
@@ -217,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app.js" />
+        <item itemvalue="Python.app (1)" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.app.js" />
         <item itemvalue="Python.timing_test" />
         <item itemvalue="Python.test_doctor" />
-        <item itemvalue="Python.test_login" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +273,7 @@
       <workItem from="1707763546247" duration="6000" />
       <workItem from="1707871700533" duration="4079000" />
       <workItem from="1708045172414" duration="2703000" />
-      <workItem from="1708129117603" duration="5713000" />
+      <workItem from="1708129117603" duration="10228000" />
     </task>
     <task id="LOCAL-00001" summary="Patient/Medical Service Updated - Shojaii">
       <option name="closed" value="true" />
@@ -436,7 +443,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708138692426</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update - shojaeikian">
+      <option name="closed" value="true" />
+      <created>1708141163066</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708141163066</updated>
+    </task>
+    <task id="LOCAL-00023" summary="update - shojaeikian">
+      <option name="closed" value="true" />
+      <created>1708141174502</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708141174503</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,6 +496,16 @@
     <MESSAGE value="update - shojaeikian" />
     <option name="LAST_COMMIT_MESSAGE" value="update - shojaeikian" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controller/medical_service_controller.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$timing.coverage" NAME="timing Coverage Results" MODIFIED="1707599645359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model/entity" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing$test_doctor.coverage" NAME="test_doctor Coverage Results" MODIFIED="1707310294918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -482,12 +515,13 @@
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$visit_test.coverage" NAME="visit_test Coverage Results" MODIFIED="1707611949769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing$app_js.coverage" NAME="app.js Coverage Results" MODIFIED="1707438177953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$test_login.coverage" NAME="test_login Coverage Results" MODIFIED="1708130502290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Python_292120_Timing1$test.coverage" NAME="test Coverage Results" MODIFIED="1708139100785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Python_292120_Timing1$test.coverage" NAME="test Coverage Results" MODIFIED="1708142321083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing$patient_da.coverage" NAME="patient_da Coverage Results" MODIFIED="1707137525352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model/da" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$test_doctor.coverage" NAME="test_doctor Coverage Results" MODIFIED="1708138397765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$app_js.coverage" NAME="app.js Coverage Results" MODIFIED="1708046512379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$timing_test.coverage" NAME="timing_test Coverage Results" MODIFIED="1708138593846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Python_292120_Timing1$app.coverage" NAME="app Coverage Results" MODIFIED="1708140487717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_292120_Timing1$app.coverage" NAME="app Coverage Results" MODIFIED="1708140586546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing$visit_test.coverage" NAME="visit_test Coverage Results" MODIFIED="1706888839709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Python_292120_Timing1$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1708144979342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,30 +1,20 @@
-from model.da.database_manager import DatabaseManager
+from model.da.database_manager import *
 from model.entity.doctor import Doctor
 
 
 class DoctorDa(DatabaseManager):
     def find_by_national_id(self, national_id):
         self.make_engine()
-        entity = self.session.query().filter_by(national_id=national_id)
-        return entity
-
-    def find_by_username_password(self, username, password):
-        self.make_engine()
-        entity = self.session.query().filter_by(username_password=username - password)
-        return entity
-
-    def find_by_username(self, username):
-        self.make_engine()
-        entity = self.session.query().filter_by(username=username)
+        entity = self.session.query().filter_by(Doctor.national_id == national_id).all()
         return entity
 
     def find_by_family(self, family):
         self.make_engine()
-        entity = self.session.query().filter_by(family=family)
+        entity = self.session.query().filter_by(Doctor.family == family).all()
         return entity
 
     def find_by_username_and_password(self, username, password):
         self.make_engine()
         entity = self.session.query(Doctor).filter(
-            (Doctor.username == username, Doctor.password == password))
+            and_((Doctor.username == username, Doctor.password == password))).all()
         return entity
