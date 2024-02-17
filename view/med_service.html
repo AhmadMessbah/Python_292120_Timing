@@ -32,12 +32,32 @@
       </thead>
       <tbody>
 
-
+{% for medical in medical_list %}
+        <tr>
+            <td>{{medical.id}}</td>
+            <td>{{medical.title}}</td>
+            <td>{{medical.description}}</td>
+            <td>
+                <button>Edit</button>
+                <button onclick="remove({{medical.id}})">Remove</button>
+            </td>
+        </tr>
+        {% endfor %}
 
       </tbody>
     </table>
   </div>
-<script src="assets/js/save_button.js"></script>
+<script>
+
+    function remove(id) {
+        fetch("/medical?id=" + id, {
+            method: "DELETE"
+        }).then(() => {
+            window.location.replace("/medical");
+        })
+
+    }
+</script>
 
 </body>
 </html>
