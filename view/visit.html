@@ -10,7 +10,7 @@
 </head>
 <body>
  <div class="container">
-    <form id="dataForm">
+        <form id="dataForm" action="/visit" method="post">
 
       <label for="visit_time">وقت ویزیت:</label>
       <input type="text" id="visit_time" name="visit_time">
@@ -24,12 +24,12 @@
       <input type="number" id="payment" name="payment">
 
 
-      <label for="patient_id">شناسه بیمار:</label>
-      <input type="number" id="patient_id" name="patient_id" min="1" step="1" inputmode="numeric">
+<!--      <label for="patient_id">شناسه بیمار:</label>-->
+<!--      <input type="number" id="patient_id" name="patient_id" min="1" step="1" inputmode="numeric">-->
 
 
-      <label for="patient_id">شناسه دکتر:</label>
-      <input type="number" id="doctor_id" name="patient_id" min="1" step="1" inputmode="numeric">
+<!--      <label for="patient_id">شناسه دکتر:</label>-->
+<!--      <input type="number" id="doctor_id" name="patient_id" min="1" step="1" inputmode="numeric">-->
 
       <button type="button" onclick="addRow()">ارسال</button>
     </form>
@@ -41,16 +41,38 @@
           <th>وقت ویزیت</th>
           <th>مدت زمان</th>
           <th>مبلغ ویزیت</th>
-          <th>شناسه بیمار</th>
-          <th>شناسه دکتر</th>
+<!--          <th>شناسه بیمار</th>-->
+<!--          <th>شناسه دکتر</th>-->
         </tr>
       </thead>
       <tbody>
+{% for patient in patient_list %}
+        <tr>
+            <td>{{visit.id}}</td>
+            <td>{{visit.visit_time}}</td>
+            <td>{{visit.duration}}</td>
+            <td>{{visit.payment}}</td>
 
+            <td>
+                <button>Edit</button>
+                <button onclick="remove({{patient.id}})">Remove</button>
+            </td>
+        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
-<script src="assets/js/save_button.js"></script>
+<script>
+
+    function remove(id) {
+        fetch("/visit?id=" + id, {
+            method: "DELETE"
+        }).then(() => {
+            window.location.replace("/visit");
+        })
+
+    }
+</script>
 
 </body>
 </html>

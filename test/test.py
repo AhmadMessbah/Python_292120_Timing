@@ -36,8 +36,8 @@ print(result)
 
 # save_patient
 
-patient.save("amirjik", "shojaeikiantgui", "0025811111", "1382.02.27", "09121234567", "amsh", "Aa123456$")
-print(p1)
+# patient.save("amirjik", "shojaeikiantgui", "0025811111", "1382.02.27", "09121234567", "amsh", "Aa123456$")
+# print(p1)
 
 # remove_patient
 # patient = PatientController()

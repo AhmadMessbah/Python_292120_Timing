@@ -67,3 +67,15 @@ th {
   background-color: #6297cb;
   color: #fff;
 }
+
+button.edit, button.delete {
+  background-color: #6297cb;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 48%;
+  margin-top: 10px;
+  margin-right: 2%;
+}

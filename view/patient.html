@@ -55,10 +55,10 @@
             <td>{{patient.id}}</td>
             <td>{{patient.name}}</td>
             <td>{{patient.family}}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{patient.national_id}}</td>
+            <td>{{patient.birth_date}}</td>
+            <td>{{patient.phone_number}}</td>
+            <td>{{patient.username}}</td>
             <td>
                 <button onclick="edit({{patient.id}})">Edit</button>
                 <button onclick="remove({{patient.id}})">Remove</button>
@@ -68,7 +68,6 @@
         </tbody>
     </table>
 </div>
-<!--<script src="assets/js/save_button.js"></script>-->
 <script>
     function edit(id) {
         window.location.replace("/patient/"+id);
