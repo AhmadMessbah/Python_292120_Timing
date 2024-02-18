@@ -59,3 +59,10 @@ class VisitController:
             return self.da.find_by_patient_id(patient_id)
         except Exception as e:
             return e
+
+    def find_by_all(self):
+        try:
+            visits = self.da.find_all(Visit)
+            return visits
+        except Exception as e:
+            return e
