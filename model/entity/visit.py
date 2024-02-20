@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Integer, String, ForeignKey,Time
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String, ForeignKey, Time
+# from sqlalchemy.orm import relationship
 from model.entity.base import Base
 
 
@@ -7,9 +7,9 @@ class Visit(Base):
     __tablename__ = "visit_tbl"
     id = Column(Integer, primary_key=True)
     patient_id = Column(Integer, ForeignKey("patient_tbl.id"))
-    patient = relationship("Patient")
+    # patient = relationship("Patient")
     timing_id = Column(Integer, ForeignKey("timing_tbl.id"))
-    timing = relationship("Timing")
+    # timing = relationship("Timing")
     visit_time = Column(Time)
     duration = Column(String(20))
     payment = Column(String(20))
