@@ -16,7 +16,7 @@ class Doctor(Base):
     skill = Column(String(50))
     status = Column(Boolean)
 
-    def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill, medical,
+    def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill,
                  status=True):
         self.name = name
         self.family = family
@@ -26,5 +26,4 @@ class Doctor(Base):
         self.username = username
         self.password = password
         self.skill = skill
-        self.medical = medical
         self.status = status

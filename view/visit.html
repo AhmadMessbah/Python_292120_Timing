@@ -13,8 +13,10 @@
         <form id="dataForm" action="/visit" method="post">
 
       <label for="visit_time">وقت ویزیت:</label>
-      <input type="text" id="visit_time" name="visit_time">
+      <input type="time" id="visit_time" name="visit_time">
 
+      <label for="time_id">شناسه تایم:</label>
+      <input type="text" id="time_id" name="timing_id">
 
       <label for="duration">مدت زمان:</label>
       <input type="text" id="duration" name="duration">
@@ -31,7 +33,7 @@
 <!--      <label for="patient_id">شناسه دکتر:</label>-->
 <!--      <input type="number" id="doctor_id" name="patient_id" min="1" step="1" inputmode="numeric">-->
 
-      <button type="button" onclick="addRow()">ارسال</button>
+      <button type=submit name="submit">ارسال</button>
     </form>
 
     <table id="dataTable">

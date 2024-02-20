@@ -31,8 +31,8 @@ class PatientController:
     def remove(self, id):
         try:
             da = PatientDa()
-            da.remove_by_id(Patient, id)
-            return f"{id} deleted successfully"
+            result = da.remove_by_id(Patient, id)
+            return result
 
         except Exception as e:
             return e
@@ -45,18 +45,18 @@ class PatientController:
 
             print(patient,"CONTROLLER")
             da = PatientDa()
-            # patient = da.find_by_id(Patient, id)
-            #
-            # if patient:
-            #     patient.name = name_validator(name, "invalid name")
-            #     patient.family = name_validator(family, "invalid family")
-            #     patient.national_id = national_id_validator(national_id, "invalid nationalId")
-            #     patient.date_birth = date_birth
-            #     patient.phone_number = phone_number_validator(phone_number, "invalid phone number")
-            #     patient.username = username_validator(username, "invalid username")
-            #     patient.password = password_validator(password, "invalid password")
-            #     da.edit(patient)
-            #     return f"{patient.name} {patient.family} edit successful"
+            patient = da.find_by_id(Patient, id)
+
+            if patient:
+                patient.name = name_validator(name, "invalid name")
+                patient.family = name_validator(family, "invalid family")
+                patient.national_id = national_id_validator(national_id, "invalid nationalId")
+                patient.date_birth = date_birth
+                patient.phone_number = phone_number_validator(phone_number, "invalid phone number")
+                patient.username = username_validator(username, "invalid username")
+                patient.password = password_validator(password, "invalid password")
+                da.edit(patient)
+                return f"{patient.name} {patient.family} edit successful"
 
         except Exception as e:
             return e

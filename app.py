@@ -33,6 +33,7 @@ def medical():
         msg = controller.remove(id)
     return render_template("med_service.html")
 
+
 @app.route("/doctor", methods=["GET", 'POST', 'DELETE', "PUT"])
 def doctor():
     if request.method == "POST":
@@ -44,15 +45,11 @@ def doctor():
         phone_number = request.form['phone_number']
         username = request.form['username']
         password = request.form['password']
-        skil = request.form['skil']
-        medical_service = request.form['medical_service']
-        print(medical_service)
-        medic = controller.find_doctor_by_id(medical_service)
-        msg = controller.save(name, family, national_id, date_birth, phone_number, username, password, skil,
-                              medic)
+        skill = request.form['skill']
+        msg = controller.save(name, family, national_id, date_birth, phone_number, username, password, skill)
         print(msg)
     elif request.method == "DELETE":
-        id = request.form['id']
+        id = request.args.get('id')
         controller = DoctorController()
         msg = controller.remove(id)
         print(msg)
@@ -65,11 +62,16 @@ def doctor():
         phone_number = request.form['phone_number']
         username = request.form['username']
         password = request.form['password']
-        skil = request.form['skil']
+        skill = request.form['skill']
         controller = DoctorController()
-        msg = controller.edit(id, name, family, national_id, date_birth, phone_number, username, password, skil)
+        msg = controller.edit(id, name, family, national_id, date_birth, phone_number, username, password, skill)
         print(msg)
-    return render_template("doctor.html")
+    return render_template("doctor.html", doctor_list=DoctorController.find_all())
+
+
+@app.route("/doctor/<id>")
+def edit_doctor(id):
+    return render_template("doctor_edit.html", doctor=DoctorController().find_by_id(id))
 
 
 @app.route("/patient", methods=["GET", 'POST', 'DELETE', "PUT"])
@@ -92,23 +94,30 @@ def patient():
         id = request.args.get('id')
         print("DELETE ID : ", id)
         controller = PatientController()
+        controller.remove(id)
     return render_template("patient.html", patient_list=PatientController.find_all())
 
 
 @app.route("/patient/<id>")
 def edit_patient(id):
-    return render_template("patient_edit.html", patient = PatientController().find_by_id(id))
+    return render_template("patient_edit.html", patient=PatientController().find_by_id(id))
+
 
 @app.route("/visit", methods=["GET", 'POST', 'DELETE', "PUT"])
 def visit():
     if request.method == "POST":
-        patient = request.form['patient_id']
+        # patient =  request.form['patient_id']
+        patient = 12
+
         timing = request.form['timing_id']
         visit_time = request.form['visit_time']
         duration = request.form['duration']
         payment = request.form['payment']
         controller = VisitController()
-        msg = controller.save(patient, timing, visit_time, duration, payment)
+        # da.save(p1, t1, "12:30", "00:30", "300000")
+        # msg = controller.save(patient, timing, visit_time, duration, payment)
+        msg = controller.save(patient, 3, "12:30", "00:30", "300000")
+
         return msg
     elif request.method == "DELETE":
         id = request.form['id']

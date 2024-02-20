@@ -1,6 +1,6 @@
 from model.da.visit_da import VisitDa
 from model.entity.visit import Visit
-
+import time
 
 class VisitController:
     def __init__(self):
@@ -8,7 +8,10 @@ class VisitController:
 
     def save(self, patient, timing, visit_time, duration, payment):
         try:
+            visit_time = time.time()
             visit = Visit(patient, timing, visit_time, duration, payment)
+
+            print(patient, timing, visit_time, payment)
             self.da.save(visit)
             return f"{visit} saved"
         except Exception as e:

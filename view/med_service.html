@@ -17,7 +17,13 @@
 
       <label for="description">توضیحات:</label>
       <input type="text" id="description" name="description" >
-
+        <select>
+            {% for medical in medical_list %}
+            <option value={{medical.id}}>
+                {{medical.title}}
+            </option>
+           {% endfor %}
+        </select>
 
       <button type="submit" onclick="addRow()">ارسال</button>
     </form>

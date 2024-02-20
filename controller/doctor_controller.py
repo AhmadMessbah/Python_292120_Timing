@@ -5,22 +5,23 @@ from model.tools.validation import *
 
 class DoctorController:
 
-    def save(self, name, family, national_id, date_birth, phone_number, username, password, skil, medical_service):
+    def save(self, name, family, national_id, date_birth, phone_number, username, password, skill):
         try:
 
-            doctor = Doctor(name_validator(name, "invalid name"),
-                            name_validator(family, "invalid family"),
-                            national_id_validator(national_id, "invalid national id"),
-                            date_validator(date_birth, "invalid date"),
-                            phone_number_validator(phone_number, "invalid phone number"),
-                            username_validator(username, "invalid username"),
-                            password_validator(password, "invalid password"),
-                            name_validator(skil, "invalid skil"),
-                            medical_service
-                            )
-            print(doctor)
+            doctor = Doctor(
+                #                 name_validator(name, "invalid name"),
+                #                 name_validator(family, "invalid family"),
+                #                 national_id_validator(national_id, "invalid national id"),
+                #                 date_validator(date_birth, "invalid date"),
+                #                 phone_number_validator(phone_number, "invalid phone number"),
+                #                 username_validator(username, "invalid username"),
+                #                 password_validator(password, "invalid password"),
+                #                 name_validator(skil, "invalid skil")
+                name, family, national_id, date_birth, phone_number, username, password, skill
+            )
             da = DoctorDa()
             result = da.save(doctor)
+            return result
 
         except Exception as e:
             # e.with_traceback()
@@ -29,18 +30,19 @@ class DoctorController:
     def remove(self, id):
         try:
             da = DoctorDa()
-            da.remove_by_id(Doctor, id)
-            return f"doctor {id} has been removed"
+            result = da.remove_by_id(Doctor, id)
+            return result
         except Exception as e:
             # e.with_traceback()
             print(e)
 
-    def find_doctor_by_id(self, id):
+    def find_by_id(self, id):
         try:
             da = DoctorDa()
             result = da.find_by_id(Doctor, id)
             if result:
                 print(result)
+                return result
 
         except Exception as e:
             return e
@@ -86,7 +88,7 @@ class DoctorController:
         except Exception as e:
             return e
 
-    def edit(self, id, name, family, national_id, date_birth, phone_number, username, password, skil):
+    def edit(self, id, name, family, national_id, date_birth, phone_number, username, password, skill):
         try:
             da = DoctorDa()
             doctor = da.find_by_id(Doctor, id)
@@ -98,17 +100,17 @@ class DoctorController:
                 doctor.phone_number = phone_number_validator(phone_number, "invalid phone number")
                 doctor.username = username_validator(username, "invalid username")
                 doctor.password = password_validator(password, "invalid password")
-                doctor.skill = name_validator(skil, "invalid skil")
+                doctor.skill = name_validator(skill, "invalid skil")
                 da.edit(doctor)
                 return f"doctor {id} edited"
         except Exception as e:
             print(e)
 
+    @classmethod
     def find_all(self):
         try:
             da = DoctorDa()
             doctors = da.find_all(Doctor)
-            print(doctors)
             return doctors
         except Exception as e:
             print(e)

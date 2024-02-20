@@ -9,73 +9,77 @@
     <title>Doctor</title>
 </head>
 <body>
- <div class="container">
-       <form id="dataForm" action="/doctor" method="post">
+<div class="container">
+    <form id="dataForm" action="/doctor" method="post">
 
-      <label for="name">نام:</label>
-      <input type="text" id="name" name="name">
+        <label for="name">نام:</label>
+        <input type="text" id="name" name="name">
 
-      <label for="family"> نام خانوادگی:</label>
-      <input type="text" id="family" name="family">
+        <label for="family"> نام خانوادگی:</label>
+        <input type="text" id="family" name="family">
 
-      <label for="national_id">کد ملی:</label>
-      <input type="text" id="national_id" name="national_id">
+        <label for="national_id">کد ملی:</label>
+        <input type="text" id="national_id" name="national_id">
 
-      <label for="birth_date">تاریخ تولد:</label>
-      <input type="date" id="birth_date" name="birth_date">
+        <label for="date_birth">تاریخ تولد:</label>
+        <input type="date" id="date_birth" name="date_birth">
 
-      <label for="phone_number">شماره تلفن:</label>
-      <input type="tel" id="phone_number" name="phone_number">
+        <label for="phone_number">شماره تلفن:</label>
+        <input type="tel" id="phone_number" name="phone_number">
 
-      <label for="username">نام کاربری:</label>
-      <input type="text" id="username" name="username">
+        <label for="username">نام کاربری:</label>
+        <input type="text" id="username" name="username">
 
-      <label for="password">رمز عبور:</label>
-      <input type="password" id="password" name="password">
+        <label for="password">رمز عبور:</label>
+        <input type="password" id="password" name="password">
 
-      <label for="skill">مهارت:</label>
-      <input type="text" id="skill" name="skill">
+        <label for="skill">مهارت:</label>
+        <input type="text" id="skill" name="skill">
 
 
-      <button type="button" onclick="addRow()">ارسال</button>
+        <button type="submit">ذخیره</button>
     </form>
 
     <table id="dataTable">
-      <thead>
+        <thead>
         <tr>
-          <th>شماره</th>
-          <th>نام</th>
-          <th>نام خانوادگی</th>
-          <th>کد ملی</th>
-          <th>تاریخ تولد</th>
-          <th>شماره تلفن</th>
-          <th>نام کاربری</th>
-          <th>رمز عبور</th>
-          <th>مهارت</th>
+            <th>شماره</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>کد ملی</th>
+            <th>تاریخ تولد</th>
+            <th>شماره تلفن</th>
+            <th>نام کاربری</th>
+            <th>مهارت</th>
+            <th>عملیات</th>
+
         </tr>
-      </thead>
-      <tbody>
-{% for doctor in doctor_list %}
+        </thead>
+        <tbody>
+        {% for doctor in doctor_list %}
         <tr>
             <td>{{doctor.id}}</td>
             <td>{{doctor.name}}</td>
             <td>{{doctor.family}}</td>
             <td>{{doctor.national_id}}</td>
-            <td>{{doctor.birth_date}}</td>
+            <td>{{doctor.date_birth}}</td>
             <td>{{doctor.phone_number}}</td>
             <td>{{doctor.username}}</td>
             <td>{{doctor.skill}}</td>
             <td>
-                <button>Edit</button>
+                <button onclick="edit({{doctor.id}})">Edit</button>
                 <button onclick="remove({{doctor.id}})">Remove</button>
             </td>
         </tr>
         {% endfor %}
 
-      </tbody>
+        </tbody>
     </table>
-  </div>
-   <script>
+</div>
+<script>
+    function edit(id) {
+        window.location.replace("/doctor/"+id);
+    }
 
     function remove(id) {
         fetch("/doctor?id=" + id, {
@@ -83,7 +87,6 @@
         }).then(() => {
             window.location.replace("/doctor");
         })
-
     }
 </script>
 </body>

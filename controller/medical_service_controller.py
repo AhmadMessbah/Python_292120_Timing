@@ -64,6 +64,7 @@ class MedicalServiceController:
             da = MedicalServiceDa()
             medical = da.find_all(MedicalService)
             print(medical)
+            return medical
 
 
         except Exception as e:
