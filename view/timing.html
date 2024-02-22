@@ -9,52 +9,64 @@
     <title>Timing</title>
 </head>
 <body>
- <div class="container">
-        <form id="dataForm" action="/timing" method="post">
+<div class="container">
+    <form id="dataForm" action="/timing" method="post">
+        <select>
+            {% for doctor in doctor_list %}
+            <option value={{doctor.id}} id="doctor" name="doctor">
+                {{doctor.name}} {{doctor.family}}
+            </option>
+            {% endfor %}
+        </select>
+        <label for="timing_date">تاریخ :</label>
+        <input type="date" id="timing_date" name="timing_date">
 
-      <label for="date">تاریخ :</label>
-      <input type="date" id="date" name="date">
+        <label for="start_time">ساعت شروع:</label>
+        <input type="time" id="start_time" name="start_time" required>
 
-      <label for="start_time">ساعت شروع:</label>
-      <input type="time" id="start_time" name="start_time" required>
-
-      <label for="end_time">ساعت پایان:</label>
-      <input type="time" id="end_time" name="end_time" required>
+        <label for="end_time">ساعت پایان:</label>
+        <input type="time" id="end_time" name="end_time" required>
 
 
-      <button type="button" onclick="addRow()">ارسال</button>
+        <button type="submit">ذخیره</button>
     </form>
 
     <table id="dataTable">
-      <thead>
+        <thead>
         <tr>
-          <th>شماره</th>
-          <th>تاریخ</th>
-          <th>ساعت شروع</th>
-          <th>ساعت پایان</th>
+            <th>شماره</th>
+            <th>دکتر</th>
+            <th>تاریخ</th>
+            <th>ساعت شروع</th>
+            <th>ساعت پایان</th>
+            <th>عملیات</th>
+
         </tr>
-      </thead>
-      <tbody>
-{% for patient in patient_list %}
+        </thead>
+        <tbody>
+        {% for timing in timing_list %}
+
         <tr>
             <td>{{timing.id}}</td>
-            <td>{{timing.date}}</td>
+            <td>{{timing.doctor_id}}</td>
+            <td>{{timing.timing_date}}</td>
             <td>{{timing.start_time}}</td>
             <td>{{timing.end_time}}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+
             <td>
-                <button>Edit</button>
-                <button onclick="remove({{patient.id}})">Remove</button>
+                <button onclick="edit({{timing.id}})">Edit</button>
+                <button onclick="remove({{timing.id}})">Remove</button>
             </td>
         </tr>
         {% endfor %}
-      </tbody>
+        </tbody>
     </table>
-  </div>
+</div>
 <script>
+
+    function edit(id) {
+        window.location.replace("/timing/" + id);
+    }
 
     function remove(id) {
         fetch("/timing?id=" + id, {
@@ -62,7 +74,6 @@
         }).then(() => {
             window.location.replace("/timing");
         })
-
     }
 </script>
 

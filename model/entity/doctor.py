@@ -15,6 +15,7 @@ class Doctor(Base):
     password = Column(String(30))
     skill = Column(String(50))
     status = Column(Boolean)
+    timings = relationship("Timing", back_populates="doctor", cascade="all, delete-orphan")
 
     def __init__(self, name, family, national_id, date_birth, phone_number, username, password, skill,
                  status=True):

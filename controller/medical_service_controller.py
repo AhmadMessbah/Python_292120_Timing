@@ -8,7 +8,7 @@ import tkinter.messagebox as msg
 class MedicalServiceController:
     def save(self, title, description):
         try:
-            service = MedicalService(name_validator(title, "invalid title"), description)
+            service = MedicalService(title, description)
             da = MedicalServiceDa()
             da.save(service)
             return service
@@ -21,7 +21,7 @@ class MedicalServiceController:
             result = da.find_by_id(MedicalService, id)
             if result:
                 da.remove_by_id(MedicalService, id)
-                print(result)
+                return result
 
         except Exception as e:
             print(e)
@@ -30,7 +30,7 @@ class MedicalServiceController:
         try:
             if name_validator(title, "invalid title"):
                 da = MedicalServiceDa()
-                result = da.find_by_title(MedicalService, title)
+                result = da.find_by_title(title)
                 if result:
                     return result
         except Exception as e:
@@ -42,10 +42,10 @@ class MedicalServiceController:
             medical = da.find_by_id(MedicalService, id)
 
             if medical:
-                medical.title = name_validator(title, "invalid title")
+                medical.title = title
                 medical.description = description
-                da.edit(medical)
-                return f"medical service {id} edited"
+                result = da.edit(medical)
+                return result
         except Exception as e:
             print(e)
 
@@ -55,10 +55,10 @@ class MedicalServiceController:
             medical = da.find_by_id(MedicalService, id)
             print(medical)
             if medical:
-                return f"find user with id {id}"
+                return medical
         except Exception as e:
             print(e)
-
+    @classmethod
     def find_all(self):
         try:
             da = MedicalServiceDa()

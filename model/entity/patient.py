@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy.orm import relationship
 
 from model.entity.base import Base
 
@@ -14,6 +15,7 @@ class Patient(Base):
     username = Column(String(30))
     password = Column(String(30))
     status = Column(Boolean)
+    visits = relationship("Visit", back_populates="patient", cascade="all, delete-orphan")
 
     def __init__(self, name, family, national_id, date_birth, phone_number, username, password,status=True):
         self.id = None

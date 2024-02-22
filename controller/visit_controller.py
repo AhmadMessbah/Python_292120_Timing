@@ -34,11 +34,14 @@ class VisitController:
 
     def remove(self, id):
         try:
-            self.da.remove(id)
-            return "deleted"
-        except Exception as e:
-            return e
+            da = VisitDa()
+            result = da.find_by_id(Visit, id)
+            if result:
+                da.remove_by_id(Visit, id)
+                return result
 
+        except Exception as e:
+            print(e)
     def find_by_id(self, id):
         try:
             return self.da.find_by_id(id)
@@ -62,10 +65,11 @@ class VisitController:
             return self.da.find_by_patient_id(patient_id)
         except Exception as e:
             return e
-
-    def find_by_all(self):
+    @classmethod
+    def find_all(cls):
         try:
-            visits = self.da.find_all(Visit)
+            da = VisitDa()
+            visits = da.find_all(Visit)
             return visits
         except Exception as e:
             return e

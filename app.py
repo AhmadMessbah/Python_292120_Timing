@@ -28,10 +28,15 @@ def medical():
         controller = MedicalServiceController()
         msg = controller.edit(id, title, description)
     elif request.method == "DELETE":
-        id = request.form['id']
+        id = request.args.get('id')
         controller = MedicalServiceController()
         msg = controller.remove(id)
-    return render_template("med_service.html")
+    return render_template("med_service.html", medical_list=MedicalServiceController.find_all())
+
+
+@app.route("/medical/<id>")
+def edit_medical(id):
+    return render_template("medical_edit.html", medical=MedicalServiceController().find_by_id(id))
 
 
 @app.route("/doctor", methods=["GET", 'POST', 'DELETE', "PUT"])
@@ -120,7 +125,7 @@ def visit():
 
         return msg
     elif request.method == "DELETE":
-        id = request.form['id']
+        id = request.args.get('id')
         controller = VisitController()
         msg = controller.remove(id)
         return msg
@@ -132,14 +137,19 @@ def visit():
         controller = VisitController()
         msg = controller.edit(id, visit_time, duration, payment)
         return msg
-    return render_template("visit.html")
+    return render_template("visit.html", visit_list=VisitController.find_all(), timing_list=TimingController.find_all())
+
+
+@app.route("/visit/<id>")
+def edit_visit(id):
+    return render_template("visit_edit.html", visit=VisitController().find_by_id(id))
 
 
 @app.route("/timing", methods=["GET", "POST", "PUT", "DELETE"])
 def timimng():
     if request.method == 'POST':
-        doctor = request.form['doctor']
-        timing_date = request.form['timing_id']
+        doctor = request.args.get('doctor')
+        timing_date = request.form['timing_date']
         start_time = request.form['start_time']
         end_time = request.form['end_time']
         controller = TimingController()
@@ -154,11 +164,17 @@ def timimng():
         msg = controller.edit(id, timing_date, start_time, end_time)
         return msg
     elif request.method == 'DELETE':
-        id = request.form['id']
+        id = request.args.get('id')
         controller = TimingController()
         msg = controller.remove(id)
         return msg
-    return render_template("timing.html")
+    return render_template("timing.html", timing_list=TimingController.find_all(),
+                           doctor_list=DoctorController.find_all())
+
+
+@app.route("/timing/<id>")
+def edit_timing(id):
+    return render_template("timing_edit.html", timing=TimingController().find_by_id(id))
 
 
 if __name__ == "__main__":

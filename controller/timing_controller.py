@@ -5,7 +5,7 @@ import tkinter.messagebox as msg
 
 
 class TimingController:
-    def save(self, date, start_time, end_time, doctor):
+    def save(self, doctor, date, start_time, end_time):
         try:
 
             timing = Timing(date, start_time, end_time, doctor)
@@ -50,12 +50,12 @@ class TimingController:
         except Exception as e:
             print(e)
 
-    def find_all(self):
+    @classmethod
+    def find_all(cls):
         try:
             da = TimingDa()
             timing = da.find_all(Timing)
-            print(timing)
-
+            return timing
         except Exception as e:
             return e
 

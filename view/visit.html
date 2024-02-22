@@ -9,46 +9,59 @@
     <title>Visit</title>
 </head>
 <body>
- <div class="container">
-        <form id="dataForm" action="/visit" method="post">
+<div class="container">
+    <form id="dataForm" action="/visit" method="post">
+        <select>
 
-      <label for="visit_time">وقت ویزیت:</label>
-      <input type="time" id="visit_time" name="visit_time">
+            {% for timing in timing_list %}
+            <option value={{timing.id}}>
+                {{timing.doctor_id}}
+            </option>
+            {% endfor %}
+        </select>
+        <label for="doctor">دکتر:</label>
+        <input type="text" id="doctor" name="doctor" value="test doctor" readonly>
 
-      <label for="time_id">شناسه تایم:</label>
-      <input type="text" id="time_id" name="timing_id">
+        <label for="time">زمان ویزیت:</label>
+        <input type="text" id="time" name="time" value="test time" readonly>
 
-      <label for="duration">مدت زمان:</label>
-      <input type="text" id="duration" name="duration">
+        <label for="visit_time">وقت ویزیت:</label>
+        <input type="time" id="visit_time" name="visit_time">
 
+        <label for="time_id">شناسه تایم:</label>
+        <input type="text" id="time_id" name="timing_id">
 
-      <label for="payment">مبلغ ویزیت:</label>
-      <input type="number" id="payment" name="payment">
-
-
-<!--      <label for="patient_id">شناسه بیمار:</label>-->
-<!--      <input type="number" id="patient_id" name="patient_id" min="1" step="1" inputmode="numeric">-->
+        <label for="duration">مدت زمان:</label>
+        <input type="text" id="duration" name="duration">
 
 
-<!--      <label for="patient_id">شناسه دکتر:</label>-->
-<!--      <input type="number" id="doctor_id" name="patient_id" min="1" step="1" inputmode="numeric">-->
+        <label for="payment">مبلغ ویزیت:</label>
+        <input type="number" id="payment" name="payment">
 
-      <button type=submit name="submit">ارسال</button>
+
+        <!--      <label for="patient_id">شناسه بیمار:</label>-->
+        <!--      <input type="number" id="patient_id" name="patient_id" min="1" step="1" inputmode="numeric">-->
+
+
+        <!--      <label for="patient_id">شناسه دکتر:</label>-->
+        <!--      <input type="number" id="doctor_id" name="patient_id" min="1" step="1" inputmode="numeric">-->
+
+        <button type=submit name="submit">ارسال</button>
     </form>
 
     <table id="dataTable">
-      <thead>
+        <thead>
         <tr>
-           <th>شماره</th>
-          <th>وقت ویزیت</th>
-          <th>مدت زمان</th>
-          <th>مبلغ ویزیت</th>
-<!--          <th>شناسه بیمار</th>-->
-<!--          <th>شناسه دکتر</th>-->
+            <th>شماره</th>
+            <th>وقت ویزیت</th>
+            <th>مدت زمان</th>
+            <th>مبلغ ویزیت</th>
+            <th>عملیات</th>
+            <!--          <th>شناسه دکتر</th>-->
         </tr>
-      </thead>
-      <tbody>
-{% for patient in patient_list %}
+        </thead>
+        <tbody>
+        {% for visit in visit_list %}
         <tr>
             <td>{{visit.id}}</td>
             <td>{{visit.visit_time}}</td>
@@ -56,15 +69,19 @@
             <td>{{visit.payment}}</td>
 
             <td>
-                <button>Edit</button>
-                <button onclick="remove({{patient.id}})">Remove</button>
+                <button onclick="edit({{visit.id}})">Edit</button>
+                <button onclick="remove({{visit.id}})">Remove</button>
             </td>
         </tr>
         {% endfor %}
-      </tbody>
+        </tbody>
     </table>
-  </div>
+</div>
 <script>
+
+    function edit(id) {
+        window.location.replace("/visit/" + id);
+    }
 
     function remove(id) {
         fetch("/visit?id=" + id, {
@@ -72,7 +89,6 @@
         }).then(() => {
             window.location.replace("/visit");
         })
-
     }
 </script>
 

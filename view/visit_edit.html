@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/patient.css') }}">
+    <title>Patient</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit timing</h1>
+    <form id="dataForm">
+
+        <label for="visit_time">وقت ویزیت:</label>
+        <input type="time" id="visit_time" name="visit_time" value="{{visit.visit_time}}">
+
+        <label for="time_id">شناسه تایم:</label>
+        <input type="text" id="time_id" name="timing_id" value="{{visit.timing_id}}">
+
+        <label for="duration">مدت زمان:</label>
+        <input type="text" id="duration" name="duration" value="{{visit.duration}}">
+
+
+    </form>
+    <button onclick="edit()">ویرایش</button>
+
+</div>
+<script>
+    function edit() {
+        const form = document.getElementById("dataForm");
+        fetch("/visit", {
+            method: "PUT",
+            body: JSON.stringify(new FormData(form))
+        })
+    }
+</script>
+
+
+</body>
+</html>

@@ -9,8 +9,9 @@ class Timing(Base):
     timing_date = Column(Date)
     start_time = Column(Time)
     end_time = Column(Time)
-    doctor_id = Column(Integer, ForeignKey("doctor_tbl.id"))
+    doctor_id = Column(Integer, ForeignKey("doctor_tbl.id"), nullable="True")
     doctor = relationship("Doctor")
+    visits = relationship("Visit", back_populates="timing", cascade="all, delete-orphan")
 
 
 
