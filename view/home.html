@@ -1,16 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../view/assets/css/home.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Home page</title>
+
 </head>
 <body>
-<a href="/patient">patient</a>
-<a href="/doctor">doctor</a>
-<a href="/medical">medical</a>
-<a href="/visit">visit</a>
-<a href="/timing">timing</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">رزرو تایم</a></li>
+                <li><a href="#">تماس با ما</a></li>
+                <li><a href="#">درباره ما</a></li>
+            </ul>
+        </nav>
+        <h1>بیمارستان لاله</h1>
+    </header>
 
+    <main>
+<div class="wrapper">
+        <div class="prev-btn"><i class="fas fa-chevron-left"></i></div>
 
+        <div class="slides-container">
+          <div class="slide-image">
+            <img src="./assets/images/img1.jpg" alt="" />
+          </div>
+
+          <div class="slide-image">
+            <img src="./assets/images/img2.jpg" alt="" />
+          </div>
+
+          <div class="slide-image">
+            <img src="./assets/images/img3.jpg" alt="" />
+          </div>
+
+        </div>
+
+        <div class="next-btn"><i class="fas fa-chevron-right"></i></div>
+      </div>
+
+      <div class="navigation-dots"></div>
+        <div class="buttons">
+
+            <a href="#" style="background-color: #6297cb; color: #fff; padding: 10px 20px;">ویزیت </a>
+            <a href="#" style="background-color: #6297cb; color: #fff; padding: 10px 20px;"> تایمینگ</a>
+            <a href="#" style="background-color: #6297cb; color: #fff; padding: 10px 20px;"> دکتر</a>
+            <a href="#" style="background-color: #6297cb; color: #fff; padding: 10px 20px;"> بیمار</a>
+            <a href="#" style="background-color: #6297cb; color: #fff; padding: 10px 20px;"> خدمات پزشکی</a>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <!-- لینک‌های لوگوها -->
+            <a href="#">اینستاگرام</a>
+            <a href="#">تلگرام</a>
+            <a href="#">واتس اپ</a>
+        </div>
+        <p>آدرس: شهرک غرب، بلوار خوردین، هرمزان، بیمرستان فوق تخصصی لاله</p>
+    </footer>
+<script>
+      const slideImage = document.querySelectorAll(".slide-image");
+  const slidesContainer = document.querySelector(".slides-container");
+  const nextBtn = document.querySelector(".next-btn");
+  const prevBtn = document.querySelector(".prev-btn");
+  const navigationDots = document.querySelector(".navigation-dots");
+
+  let numberOfImages = slideImage.length;
+  let slideWidth = slideImage[0].clientWidth;
+  let currentSlide = 0;
+
+  // Set up the slider
+
+  function init() {
+    /*
+      slideImage[0] = 0
+      slideImage[1] = 100%
+      slideImage[2] = 200%
+      */
+
+    slideImage.forEach((img, i) => {
+      img.style.left = i * 100 + "%";
+    });
+
+    slideImage[0].classList.add("active");
+
+    createNavigationDots();
+  }
+
+  init();
+
+  // Create navigation dots
+
+  function createNavigationDots() {
+    for (let i = 0; i < numberOfImages; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("single-dot");
+      navigationDots.appendChild(dot);
+
+      dot.addEventListener("click", () => {
+        goToSlide(i);
+      });
+    }
+
+    navigationDots.children[0].classList.add("active");
+  }
+
+  // Next Button
+
+  nextBtn.addEventListener("click", () => {
+    if (currentSlide >= numberOfImages - 1) {
+      goToSlide(0);
+      return;
+    }
+
+    currentSlide++;
+    goToSlide(currentSlide);
+  });
+
+  // Previous Button
+
+  prevBtn.addEventListener("click", () => {
+    if (currentSlide <= 0) {
+      goToSlide(numberOfImages - 1);
+      return;
+    }
+
+    currentSlide--;
+    goToSlide(currentSlide);
+  });
+
+  // Go To Slide
+
+  function goToSlide(slideNumber) {
+    slidesContainer.style.transform =
+      "translateX(-" + slideWidth * slideNumber + "px)";
+
+    currentSlide = slideNumber;
+
+    setActiveClass();
+  }
+
+  // Set Active Class
+
+  function setActiveClass() {
+    // Set active class for Slide Image
+
+    let currentActive = document.querySelector(".slide-image.active");
+    currentActive.classList.remove("active");
+    slideImage[currentSlide].classList.add("active");
+
+    //   set active class for navigation dots
+
+    let currentDot = document.querySelector(".single-dot.active");
+    currentDot.classList.remove("active");
+    navigationDots.children[currentSlide].classList.add("active");
+  }
+</script>
 </body>
 </html>
