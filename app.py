@@ -111,18 +111,15 @@ def edit_patient(id):
 @app.route("/visit", methods=["GET", 'POST', 'DELETE', "PUT"])
 def visit():
     if request.method == "POST":
-        # patient =  request.form['patient_id']
-        patient = 12
-
+        doctor = request.form.get("doctor_id")
+        doctor_in_timing = TimingController().find_by_doctor_id(doctor)
+        print(str(doctor))
         timing = request.form['timing_id']
         visit_time = request.form['visit_time']
         duration = request.form['duration']
         payment = request.form['payment']
         controller = VisitController()
-        # da.save(p1, t1, "12:30", "00:30", "300000")
-        # msg = controller.save(patient, timing, visit_time, duration, payment)
-        msg = controller.save(patient, 3, "12:30", "00:30", "300000")
-
+        msg = controller.save(patient, timing, visit_time, duration, payment)
         return msg
     elif request.method == "DELETE":
         id = request.args.get('id')
@@ -137,7 +134,8 @@ def visit():
         controller = VisitController()
         msg = controller.edit(id, visit_time, duration, payment)
         return msg
-    return render_template("visit.html", visit_list=VisitController.find_all(), timing_list=TimingController.find_all())
+    return render_template("visit.html", visit_list=VisitController.find_all(),
+                           doctor_list=DoctorController.find_all() )
 
 
 @app.route("/visit/<id>")
@@ -148,13 +146,14 @@ def edit_visit(id):
 @app.route("/timing", methods=["GET", "POST", "PUT", "DELETE"])
 def timimng():
     if request.method == 'POST':
-        doctor = request.args.get('doctor')
+        doctor = request.form.get('doctor')
+        print(str(doctor))
+        doctor_list = DoctorController().find_by_id(doctor)
         timing_date = request.form['timing_date']
         start_time = request.form['start_time']
         end_time = request.form['end_time']
         controller = TimingController()
-        msg = controller.save(doctor, timing_date, start_time, end_time)
-        return msg
+        msg = controller.save(doctor_list, timing_date, start_time, end_time)
     elif request.method == 'PUT':
         id = request.form['id']
         timing_date = request.form['timing_date']

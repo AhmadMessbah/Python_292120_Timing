@@ -12,6 +12,7 @@ class Visit(Base):
 
     timing_id = Column(Integer, ForeignKey("timing_tbl.id"), nullable="True")
     timing = relationship("Timing")
+
     visit_time = Column(Time)
     duration = Column(String(20))
     payment = Column(String(20))

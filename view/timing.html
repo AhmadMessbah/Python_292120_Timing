@@ -11,9 +11,9 @@
 <body>
 <div class="container">
     <form id="dataForm" action="/timing" method="post">
-        <select>
+        <select  name="doctor">
             {% for doctor in doctor_list %}
-            <option value={{doctor.id}} id="doctor" name="doctor">
+            <option value={{doctor.id}} >
                 {{doctor.name}} {{doctor.family}}
             </option>
             {% endfor %}

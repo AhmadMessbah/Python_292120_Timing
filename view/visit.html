@@ -11,20 +11,20 @@
 <body>
 <div class="container">
     <form id="dataForm" action="/visit" method="post">
-        <select>
+        <select name="doctor_id">
 
-            {% for timing in timing_list %}
-            <option value={{timing.id}}>
-                {{timing.doctor_id}}
+            {% for doctor in doctor_list %}
+            <option value={{doctor.id}} >
+                {{doctor.name}} {{doctor.family}}
             </option>
             {% endfor %}
+
         </select>
         <label for="doctor">دکتر:</label>
-        <input type="text" id="doctor" name="doctor" value="test doctor" readonly>
+        <input type="text" id="doctor" name="doctor" value="tets" readonly>
 
         <label for="time">زمان ویزیت:</label>
         <input type="text" id="time" name="time" value="test time" readonly>
-
         <label for="visit_time">وقت ویزیت:</label>
         <input type="time" id="visit_time" name="visit_time">
 

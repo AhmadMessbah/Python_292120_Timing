@@ -97,12 +97,10 @@ class TimingController:
 
     def find_by_doctor_id(self, doctor_id):
         try:
-            if date_validator(doctor_id, "error"):
-                da = TimingDa()
-                result = da.find_by_doctor_id(doctor_id)
-                msg.showinfo("info", str(result))
 
-                return "found"
+            da = TimingDa()
+            result = da.find_by_doctor_id(doctor_id)
+            return result
 
         except Exception as e:
             msg.showerror("error", f"error : {e}")

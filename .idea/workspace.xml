@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f5e599ca-7670-42db-9723-ff1683e71cb8" name="Changes" comment="creat timing_edit and visit_edit medical_edit - update timing and visit- shojaeikian">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/timing_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/timing_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/entity/visit.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/visit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/med_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/med_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/timing.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/timing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/visit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +268,7 @@
       <workItem from="1708045172414" duration="2703000" />
       <workItem from="1708129117603" duration="13505000" />
       <workItem from="1708394238342" duration="5332000" />
-      <workItem from="1708628226412" duration="8486000" />
+      <workItem from="1708628226412" duration="13119000" />
     </task>
     <task id="LOCAL-00001" summary="Patient/Medical Service Updated - Shojaii">
       <option name="closed" value="true" />
@@ -481,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708635726890</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="creat timing_edit and visit_edit medical_edit - update timing and visit- shojaeikian">
+      <option name="closed" value="true" />
+      <created>1708643934956</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1708643934957</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,6 +549,6 @@
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$timing_test.coverage" NAME="timing_test Coverage Results" MODIFIED="1708138593846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing1$app.coverage" NAME="app Coverage Results" MODIFIED="1708140586546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_292120_Timing$visit_test.coverage" NAME="visit_test Coverage Results" MODIFIED="1706888839709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/Python_292120_Timing1$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1708643743093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_292120_Timing1$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1708648054667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
