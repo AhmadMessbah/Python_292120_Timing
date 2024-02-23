@@ -9,16 +9,17 @@ body {
   height: 100vh;
 }
 
-.login-container {
+.signup-container {
   background-color: #fff;
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   top: 90px;
   position: absolute;
+  width: 50vw;
 }
 
-.login-form {
+.signup-form {
   display: grid;
   grid-gap: 20px;
   direction: rtl;
