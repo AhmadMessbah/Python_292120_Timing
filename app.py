@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+from sqlalchemy.orm import Session
+
 from controller.doctor_controller import DoctorController
 from controller.medical_service_controller import MedicalServiceController
 from controller.patient_controller import PatientController
@@ -7,7 +9,10 @@ from controller.visit_controller import VisitController
 from model.entity.patient import Patient
 
 app = Flask(__name__, template_folder="view", static_folder="view/assets")
+SESSION_PERMANENT = 30
+app.config["SESSION_TYPE"] = "filesystem"
 
+Session(app)
 
 @app.route("/")
 def home():
@@ -111,16 +116,13 @@ def edit_patient(id):
 @app.route("/visit", methods=["GET", 'POST', 'DELETE', "PUT"])
 def visit():
     if request.method == "POST":
-        doctor = request.form.get("doctor_id")
-        doctor_in_timing = TimingController().find_by_doctor_id(doctor)
-        print(str(doctor))
+
         timing = request.form['timing_id']
         visit_time = request.form['visit_time']
         duration = request.form['duration']
         payment = request.form['payment']
         controller = VisitController()
         msg = controller.save(patient, timing, visit_time, duration, payment)
-        return msg
     elif request.method == "DELETE":
         id = request.args.get('id')
         controller = VisitController()
@@ -134,8 +136,11 @@ def visit():
         controller = VisitController()
         msg = controller.edit(id, visit_time, duration, payment)
         return msg
+    doctor = request.form.get("doctor_id")
+    doctor_in_timing = TimingController().find_by_doctor_id(doctor)
+    print(str(doctor))
     return render_template("visit.html", visit_list=VisitController.find_all(),
-                           doctor_list=DoctorController.find_all() )
+                           doctor_list=DoctorController.find_all(),doctor_time=doctor_in_timing)
 
 
 @app.route("/visit/<id>")

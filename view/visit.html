@@ -14,11 +14,18 @@
         <select name="doctor_id">
 
             {% for doctor in doctor_list %}
-            <option value={{doctor.id}} >
+            <option value={{doctor.id}}>
                 {{doctor.name}} {{doctor.family}}
             </option>
             {% endfor %}
 
+        </select>
+        <select name="doctor_time">
+            {% for doctor_time in doctor_list %}
+            <option value={{doctor_time.id}}>
+                {{doctor_time.name}} {{doctor_time.family}}
+            </option>
+            {% endfor %}
         </select>
         <label for="doctor">دکتر:</label>
         <input type="text" id="doctor" name="doctor" value="tets" readonly>

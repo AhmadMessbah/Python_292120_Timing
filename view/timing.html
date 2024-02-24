@@ -11,13 +11,14 @@
 <body>
 <div class="container">
     <form id="dataForm" action="/timing" method="post">
-        <select  name="doctor">
+        <select name="doctor">
             {% for doctor in doctor_list %}
-            <option value={{doctor.id}} >
+            <option value={{doctor.id}}>
                 {{doctor.name}} {{doctor.family}}
             </option>
             {% endfor %}
         </select>
+
         <label for="timing_date">تاریخ :</label>
         <input type="date" id="timing_date" name="timing_date">
 
